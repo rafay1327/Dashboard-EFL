@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -259,8 +259,22 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Home - Analytics</span></a></li>
+          <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Tables</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#">Recruitment Form</a></li>
+            <li><a href="./pages/dairyvac.html">Dairy Vacancies</a></li>
+            <li><a href="./pages/attrition.html">Attrition</a></li>
+            <li><a href="./pages/transfers.html">Transfers</a></li>
+            <li><a href="./pages/approv_actual.html">Approved vs Actual</a></li>
+            <li><a href="./pages/pli_conducted.html">PLI Conducted</a></li>
+          </ul>
+        </li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Forms</span>
             <span class="pull-right-container">
@@ -269,7 +283,11 @@ desired effect
           </a>
           <ul class="treeview-menu">
             <li><a href="#">Recruitment Form</a></li>
-            <li><a href="./pages/forms/dairyvac.html">Dairy Vacancies</a></li>
+            <li><a href="./pages/dairyvac.html">Dairy Vacancies</a></li>
+            <li><a href="./pages/attrition.html">Attrition</a></li>
+            <li><a href="./pages/transfers.html">Transfers</a></li>
+            <li><a href="./pages/approv_actual.html">Approved vs Actual</a></li>
+            <li><a href="./pages/pli_conducted.html">PLI Conducted</a></li>
           </ul>
         </li>
       </ul>
