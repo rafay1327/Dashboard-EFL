@@ -9,9 +9,12 @@
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
+    "diskdb": "^0.1.17",
+    "ejs": "^2.5.6",
     "express": "~4.15.2",
     "moment": "^2.18.1",
     "mongoose": "^4.10.5",
+    "mongoose-auto-increment": "^5.0.1",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2"
   }
