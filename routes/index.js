@@ -10,6 +10,11 @@ router.get('/dairyvac', function(req, res, next) {
   res.render('pages/forms/dairyvac', { title: 'TA Dashboard' });
 //	res.send('respond with dairy vacancies');
 });
+router.get('/dairyvac/dvData', function(req, res, next) {
+  res.render('pages/forms/dvData', { title: 'TA Dashboard' });
+//	res.send('respond with dairy vacancies');
+});
+
 router.get('/pli_conducted', function(req, res, next) {
   //res.render('dairyvac', { title: 'TA Dashboard' });
 	res.send('respond with pli conducted');

@@ -6,7 +6,7 @@
   var db = require('diskdb');
   db = db.connect('db', ['dairyvacancy']);
 
- dvRouter.route('/')
+ dvRouter.route('/dvData')
 
  .get( function(req, res) {
     res.json(db.dairyvacancy.find());
@@ -19,11 +19,9 @@
  .put(function(req, res) {
     res.json(db.dairyvacancy.update({
       _id: req.body._id
-    }, {
-      
     }));
   })
-
+ 
   .delete(function(req, res) {
     res.json(db.dairyvacancy.remove({
       _id: req.params._id
@@ -32,7 +30,7 @@
 
 
 
-  dvRouter.route('/:id')
+  dvRouter.route('/dvData/:id')
 
 
   .get(function(req, res) {
