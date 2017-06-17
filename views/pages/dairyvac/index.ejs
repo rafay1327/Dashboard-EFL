@@ -44,7 +44,7 @@
         <th>Days to Hire</th>
 
       </tr>
-      <% dairyvacancy.forEach(function(obj){ %>
+      <% dairyvacancy.forEach(function(obj){%>
 
 
 
@@ -68,8 +68,8 @@
         <td><%= obj.acceptance_date  %></td>
         <td><%= obj.doj  %></td>
         <td><%= obj.status  %></td>
-        <td onkeyup="updateDate()"> <%= obj.days_to_hire %></td>
-        <td><a class="btn btn-primary" href="dairyvac/update/<%=obj._id%>">Edit</a></td>
+        <td> <%= obj.days_to_hire %> </td>
+        <td><a class="btn btn-primary" href="dairyvac/<%=obj._id%>">Edit</a></td>
         <td><a class="btn btn-danger" href="/dairyvac/delete/<%=obj._id%>">Delete</a></td>
       </tr>
       <% }); %>
@@ -100,17 +100,6 @@
   }
 }
 
-function updateDate(){
-                    //CEO Approval - DOJ
-                    var moment=require('moment');
-                    var ceo_date = moment(obj.ceo_approval_date, 'YYYY-MM-DD');
-                    var doj_date = moment(obj.doj , 'YYYY-MM-DD');
-                    var duration = moment.duration(ceo_date.diff(doj_date));
-                    var days_hire = duration.asDays();
-                    obj.days_to_hire = days_hire;
-
-
-                    console.log(duration.asDays()); 
-                  }
 </script>
+
 <% include ../../partials/footer %> 

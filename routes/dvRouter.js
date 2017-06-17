@@ -17,9 +17,15 @@
   dvRouter.route('/new')
   .post(function(req, res, next) {
 
-    var single =db.dairyvacancy.save(req.body); 
-    res.redirect('/dairyvac');
-  });
+   var ceo_date = moment(req.body.ceo_approval_date, 'YYYY-MM-DD');
+   var doj_date = moment(req.body.doj , 'YYYY-MM-DD');
+   var duration = moment.duration(doj_date.diff(ceo_date));
+   var days_hire = duration.asDays();
+   req.body.days_to_hire = days_hire;
+   var single =db.dairyvacancy.save(req.body); 
+
+   res.redirect('/dairyvac');
+ });
 
   dvRouter.get( '/', function(req, res) {
     //res.json(db.dairyvacancy.find({}));
@@ -27,59 +33,65 @@
     res.render('pages/dairyvac/index', { dairyvacancy: object });
 
   });
- 
+
+
+
 //============================================================================================//
 
-  var options = {
-    multi :false,
-    upsert : false
-  };
+var options = {
+  multi :false,
+  upsert : false
+};
 
- dvRouter.get('/update/:id', function(req, res, next) {
+dvRouter.get('/:id', function(req, res, next) {
 
-    var found = db.dairyvacancy.findOne({ _id : req.params.id});
+  var found = db.dairyvacancy.findOne({ _id : req.params.id});
 
-        res.render("pages/dairyvac/update",{object:found}); 
+  res.render("pages/dairyvac/update",{object:found}); 
 
-    });
+});
 
- dvRouter.put('/update/:id',function(req, res, next) {
-var object =db.dairyvacancy.update({
-    _id: req.body._id
-  }, {
-    s_no : req.body.s_no,
-    position :req.body.position,
-    region : req.body.region,
-    division: req.body.division,
-    ta_fp: req.body.ta_fp,
-    tier: req.body.tier,
-    last_incumbent: req.body.last_incumbent,
-    vacant_since: req.body.vacant_since,
-    ceo_approval_date: req.body.ceo_approval_date,
-    n_candidates_sourced: req.body.n_candidates_sourced,
-    n_candidates_tested: req.body.n_candidates_tested,
-    interviews: req.body.interviews,
-    shortlisted : req.body.shortlisted,
-    offer_date: req.body.offer_date,
-    acceptance_date: req.body.acceptance_date,
-    doj: req.body.doj,
-    status: req.body.status,
-    days_to_hire : req.body.days_to_hire
+dvRouter.post('/:id',function(req, res, next) {
+  console.log("in patch");
+  if (req.body._method == "patch") {
+    // console.log("patch");
+    console.log(req.body);
+    var object =db.dairyvacancy.update({
+      _id: req.body._id
+    }, {
+      s_no : req.body.s_no,
+      position :req.body.position,
+      region : req.body.region,
+      division: req.body.division,
+      ta_fp: req.body.ta_fp,
+      tier: req.body.tier,
+      last_incumbent: req.body.last_incumbent,
+      vacant_since: req.body.vacant_since,
+      ceo_approval_date: req.body.ceo_approval_date,
+      n_candidates_sourced: req.body.n_candidates_sourced,
+      n_candidates_tested: req.body.n_candidates_tested,
+      interviews: req.body.interviews,
+      shortlisted : req.body.shortlisted,
+      offer_date: req.body.offer_date,
+      acceptance_date: req.body.acceptance_date,
+      doj: req.body.doj,
+      status: req.body.status,
+      days_to_hire : req.body.days_to_hire
 
-  }, {options}
-  );
+    }, {options}
+    );
+    console.log('done');
+  }
   
-    res.redirect('/dairyvac');
+  res.redirect('/dairyvac');
+});
 
-   
- });
- 
-  dvRouter.get('/delete/:id',  function(req, res, next) {
+dvRouter.get('/delete/:id',  function(req, res, next) {
 
-   res.json(db.dairyvacancy.remove({ _id: req.params.id }), res.redirect('/dairyvac'));
+ res.json(db.dairyvacancy.remove({ _id: req.params.id }), res.redirect('/dairyvac'));
 
- });
+});
 
-  module.exports = dvRouter;
+module.exports = dvRouter;
 
 }());
