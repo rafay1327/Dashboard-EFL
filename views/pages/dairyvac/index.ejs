@@ -4,19 +4,19 @@
   <div class = "col-md-12 container-fluid">
 
     <div class="container-fluid">
-      <h1> Dairy Vacancies</h1>
+      <h1> Dairy Vacancies</h1><p class ="pull-right"> <a href="/" class ="btn btn-primary">Back</a></p>
 
       <p>
        <a class="btn btn-primary btn-large" href="dairyvac/new">Add</a>
+
      </p>
 
 
 
    </div>
  </div>
- <p>For Each Record</p>
- <p>show Edit and Delete Buttons</p>
- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Query">
+
+ <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Query" class="form-control">
 
  <div class = "box" >
   <div>
@@ -68,7 +68,7 @@
         <td><%= obj.acceptance_date  %></td>
         <td><%= obj.doj  %></td>
         <td><%= obj.status  %></td>
-        <td> to be calculated </td>
+        <td onkeyup="updateDate()"> <%= obj.days_to_hire %></td>
         <td><a class="btn btn-primary" href="dairyvac/update/<%=obj._id%>">Edit</a></td>
         <td><a class="btn btn-danger" href="/dairyvac/delete/<%=obj._id%>">Delete</a></td>
       </tr>
@@ -99,5 +99,18 @@
     } 
   }
 }
+
+function updateDate(){
+                    //CEO Approval - DOJ
+                    var moment=require('moment');
+                    var ceo_date = moment(obj.ceo_approval_date, 'YYYY-MM-DD');
+                    var doj_date = moment(obj.doj , 'YYYY-MM-DD');
+                    var duration = moment.duration(ceo_date.diff(doj_date));
+                    var days_hire = duration.asDays();
+                    obj.days_to_hire = days_hire;
+
+
+                    console.log(duration.asDays()); 
+                  }
 </script>
 <% include ../../partials/footer %> 

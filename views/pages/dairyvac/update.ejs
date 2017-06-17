@@ -7,67 +7,68 @@
                 <div class="box-footer " >
                 <div class ="col-xs-1">
                 <p>
-                   <input class="form-control" type="text" name="object[s_no]" value="<%= object.s_no %>"></p>
+                   <label for="pos">S. No</label>
+                   <input class="form-control" type="text" name="object.s_no" value="<%= object.s_no %>"></p>
                 </div>
 
 
                 <div class ="col-xs-2">
                 <p>
                   <label for="pos">Position Title</label>
-                  <input type="text" name ="position" class="form-control" for="pos" placeholder="">
+                  <input type="text" name ="position" class="form-control" value="<%= object.position %>" for="pos" placeholder="">
                 </p>
                 </div>
 
                 <div class ="col-xs-2">
                 <p>
                   <label for="">Region</label>
-                  <input name ="region" type="text" class="form-control" for="" placeholder=""></p>
+                  <input name ="region" type="text" class="form-control" for=""  value="<%= object.region %>" placeholder=""></p>
                 </div>
 
 
 
                    <div class ="col-xs-2">
                 <p><label for="">Division</label>
-                  <input name ="division"  type="text" class="form-control" for="" placeholder=""></p>
+                  <input name ="division"  type="text" class="form-control" for="" value="<%= object.division %>"  placeholder=""></p>
                 </div>
 
                    <div class ="col-xs-2">
                 <p><label for="">TA FP</label>
-                  <input name ="ta_fp"  type="text" class="form-control" for="" placeholder=""></p>
+                  <input name ="ta_fp"  type="text" class="form-control" for=""  value="<%= object.ta_fp %>" placeholder=""></p>
                 </div>
 
                    <div class ="col-xs-2">
                 <p><label for="">Tier</label>
-                  <input name ="tier"  type="text" class="form-control" for="" placeholder=""></p>
+                  <input name ="tier"  type="text" class="form-control" for="" value="<%= object.tier %>"  placeholder=""></p>
                 </div>
                   </div>
                     <p></p>
                   <div class="box-footer">
                    <div class ="col-xs-2">
                 <p><label for="">Last Incumbent</label>
-                  <input  name ="last_incumbent"  type="text" class="form-control" for="" placeholder=""></p>
+                  <input  name ="last_incumbent"  type="text" class="form-control" value="<%= object.last_incumbent %>"  for="" placeholder=""></p>
                 </div>
 
                    <div class ="col-xs-3">
                 <p><label for="">Vacant Since</label>
-                  <input  name ="vacant_since"  type="date" class="form-control" for="" placeholder=""></p>
+                  <input  name ="vacant_since"  type="date" class="form-control" for="" value="<%= object.vacant_since %>"  placeholder=""></p>
                 </div>  
 
                    <div class ="col-xs-3">
                 <p><label for="">CEO Approval Date </label>
-                  <input name ="ceo_approval_date" type="date" class="form-control" for="" placeholder=""></p>
+                  <input name ="ceo_approval_date" type="date" class="form-control" for="" value="<%= object.ceo_approval_date %>"  placeholder=""></p>
                 </div>
                 </div>  
                 <p></p>
                  <div class="box-footer">
                    <div class ="col-xs-4">
                 <p><label for="">Number of Candidates Sourced</label>
-                  <input name ="n_candidates_sourced" type="text" class="form-control" for="" placeholder=""></p>
+                  <input name ="n_candidates_sourced" type="text" class="form-control" for="" value="<%= object.n_candidates_sourced %>"  placeholder=""></p>
                 </div>
                    
                    <div class ="col-xs-4">
                 <p><label for="">Number of Tested Candidates</label>
-                  <input name ="n_candidates_tested" type="text" class="form-control" for="" placeholder=""></p>
+                  <input name ="n_candidates_tested" type="text" class="form-control" for="" value="<%= object.n_candidates_tested %>"  placeholder=""></p>
                 </div>
                   </div>
                   <p></p>
@@ -75,38 +76,38 @@
                    <div class="box-footer">
                   <div class ="col-xs-1">
                 <p> <label for="">Interviews</label>
-                  <input name ="Interviews" type="text" class="form-control" for="" placeholder=""></p>
+                  <input name ="interviews" type="text" class="form-control" for="" value="<%= object.interviews %>"  placeholder=""></p>
                 </div>
 
                    <div class ="col-xs-2">
                 <p><label for="">Shortlisted Candidates</label>
-                  <input name ="shortlisted" type="text" class="form-control" for="" placeholder=""></p>
+                  <input name ="shortlisted" type="text" class="form-control" for="" value="<%= object.shortlisted %>"  placeholder=""></p>
                 </div>
 
                    <div class ="col-xs-3">
                 <p><label for="">Offer Date</label>
-                  <input name ="offer_date" type="date" class="form-control" for="" placeholder=""></p>
+                  <input name ="offer_date" type="date" class="form-control" for="" value="<%= object.offer_date %>"  placeholder=""></p>
                 </div>
 
                    <div class ="col-xs-3">
                 <p><label for="">Acceptance Date</label>
-                  <input  name ="acceptance_date" type="date" class="form-control" for="" placeholder=""></p>
+                  <input  name ="acceptance_date" type="date" class="form-control" for="" value="<%= object.acceptance_date %>"  placeholder=""></p>
                 </div>
 
                    <div class ="col-xs-3">
                 <p><label for="">DOJ</label>
-                  <input name ="doj" type="date" class="form-control" for="" placeholder=""></p>
+                  <input name ="doj" type="date" class="form-control" for="" value="<%= object.doj %>"  placeholder=""></p>
                 </div>
                 </div>
                 <p></p>
                    <div class ="col-xs-2">
                 <p><label for="">Status</label>
-                  <input name ="status" type="text" class="form-control" for="" placeholder=""></p>
+                  <input name ="status" type="text" class="form-control" for="" value="<%= object.status %>"  placeholder=""></p>
                 </div>
                 
                    <div class ="col-xs-2">
-                <p><label for="">Days to Hire</label>
-                  <input name ="days_to_hire" type="text" class="form-control" for="" placeholder=""></p>
+               <!--  <p><label for="">Days to Hire</label>
+                  <input name ="days_to_hire" type="text" class="form-control" for="" value=""  placeholder=""></p> -->
                 </div>
 
                <div>
