@@ -3,7 +3,7 @@ var autoIncrement = require('mongoose-auto-increment');
 
 var dvSchema = new mongoose.Schema({
       s_no: Number,
-     position: String,
+      position: String,
       region:String,
       division: String,
       ta_fp : String,
