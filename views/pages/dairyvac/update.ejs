@@ -35,8 +35,14 @@
                 </div>
 
                    <div class ="col-xs-2">
-                <p><label for="">Tier</label>
-                  <input name ="tier"  type="text" class="form-control" for="" value="<%= object.tier %>"  placeholder=""></p>
+                <p> <select name="tier" >
+                    <option selected="<%= object.tier %>" value="<%= object.tier %>"><%= object.tier %></option>
+                    <option value="Tier V">Tier V</option>
+                    <option value="Tier IV">Tier IV</option>
+                    <option value="Tier III">Tier III</option>
+                    <option value="Tier II">Tier II</option>
+                    <option value="Tier I">Tier I</option>
+                  </select></p>
                 </div>
                   </div>
                     <p></p>
