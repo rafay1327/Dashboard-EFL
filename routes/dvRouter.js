@@ -16,6 +16,9 @@
   
   dvRouter.route('/new')
   .post(function(req, res, next) {
+   
+   var count = db.dairyvacancy.count();
+   req.body.s_no= count;
 
    var ceo_date = moment(req.body.ceo_approval_date, 'YYYY-MM-DD');
    var doj_date = moment(req.body.doj , 'YYYY-MM-DD');
@@ -52,14 +55,19 @@ dvRouter.get('/:id', function(req, res, next) {
 });
 
 dvRouter.post('/:id',function(req, res, next) {
-  console.log("in patch");
+
+   var ceo_date = moment(req.body.ceo_approval_date, 'YYYY-MM-DD');
+   var doj_date = moment(req.body.doj , 'YYYY-MM-DD');
+   var duration = moment.duration(doj_date.diff(ceo_date));
+   var days_hire = duration.asDays();
+   req.body.days_to_hire = days_hire;
+
   if (req.body._method == "patch") {
-    // console.log("patch");
     console.log(req.body);
     var object =db.dairyvacancy.update({
       _id: req.body._id
     }, {
-      s_no : req.body.s_no,
+      
       position :req.body.position,
       region : req.body.region,
       division: req.body.division,
@@ -80,7 +88,7 @@ dvRouter.post('/:id',function(req, res, next) {
 
     }, {options}
     );
-    console.log('done');
+  
   }
   
   res.redirect('/dairyvac');
