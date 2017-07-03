@@ -1,0 +1,67 @@
+  <% include ../../partials/header %> 
+
+
+
+  <div class ="col-md-12"><p class ="pull-right"> <a href="/attrition" class ="btn btn-primary" style="margin-top:15px;">Back</a></p><h2>Attrition</h2></div>
+ 
+            <form role="form" method ="POST" action="./new" >
+              <div class="box-body">
+                
+                <div class="box-footer " >
+                
+
+                <div class ="col-xs-2">
+                <p>
+                  <label for="">Employee Categories</label>
+                  <input type="text" name ="ecategories" class="form-control" for="pno" placeholder="">
+                </p>
+                </div>
+
+                <div class ="col-xs-2">
+                <p>
+                  <label for="">Month</label>
+                  <select name="month" >
+                         <option value="">January</option>
+                         <option value="">February</option>
+                         <option value="">March</option>
+                         <option value="">April</option>
+                         <option value="">May</option>
+                         <option value="">June</option>
+                         <option value="">July</option>
+                         <option value="">August</option>
+                         <option value="">September</option>
+                         <option value="">October</option>
+                         <option value="">Novemeber</option>
+                         <option value="">December</option>
+                     </select>
+                </div>
+
+
+
+                   <div class ="col-xs-2">
+                <p><label for="">Average</label>
+                  <input name ="average"  type="text" class="form-control" for="" placeholder=""></p>
+                </div>
+
+                   <div class ="col-xs-2">
+                <p><label for="">Left</label>
+                  <input name ="left"  type="text" class="form-control" for="" placeholder=""></p>
+                </div>
+
+                   <div class ="col-xs-2">
+                <p><label for="">Percentage</label>
+                 <input name ="percentage"  type="text" class="form-control" for="" placeholder=""></p>
+                 </p>
+                </div>
+                   
+
+                 
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-success" >Submit</button>
+              </div>
+            </form>
+         
+   <% include ../../partials/footer %> 
