@@ -17,7 +17,7 @@
    </div>
  </div>
 
- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Query" class="form-control">
+ <input type="text" id="myinput" onkeyup="myFunction()" placeholder="Search Query" class="form-control">
 
  <div class = "box" >
   <div>
@@ -49,11 +49,13 @@
 
   </div>
 </div>
+
 <script>
-  function myFunction() {
+
+function myFunction() {
   // Declare variables 
   var input, filter, table, tr, td, i;
-  input = document.getElementById("myInput");
+  input = document.getElementById("myinput");
   filter = input.value.toUpperCase();
   table = document.getElementById("myTable");
   tr = table.getElementsByTagName("tr");
