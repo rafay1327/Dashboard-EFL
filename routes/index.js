@@ -18,9 +18,9 @@ router.get('/attrition', function(req, res, next) {
   //res.render('dairyvac', { title: 'TA Dashboard' });
 	res.send('respond with attrition');
 });
-router.get('/approved_actual', function(req, res, next) {
+/*router.get('/approved_actual', function(req, res, next) {
   //res.render('dairyvac', { title: 'TA Dashboard' });
 	res.send('respond with approved vs approved_actual');
-});
+});*/
 
 module.exports = router;
