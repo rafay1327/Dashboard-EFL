@@ -1,65 +1,85 @@
   <% include ../../partials/header %> 
 
+<section class="content-header">
+        <h1>Attrition</h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Create new entry</h3>
+                    </div>
+                    <form action="./new" method="POST">
+                        <div class="box-body">
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="pno">P#</label></div>
+                                <div class="col-md-4">
 
+                                <input type="text" name ="pno" class="form-control" for="pno" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Employee Name</label></div>
+                                <div class="col-md-4">
 
-  <div class ="col-md-12"><p class ="pull-right"> <a href="/transfers" class ="btn btn-primary" style="margin-top:15px;">Back</a></p><h2>Transfers</h2></div>
- 
-            <form role="form" method ="POST" action="./new" >
-              <div class="box-body">
-                
-                <div class="box-footer " >
-                
+                                <input name ="ename" type="text" class="form-control" for="" placeholder="">
+                                        
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Old Division</label></div>
+                                <div class="col-md-4">
 
-                <div class ="col-xs-2">
-                <p>
-                  <label for="pno">P#</label>
-                  <input type="text" name ="pno" class="form-control" for="pno" placeholder="">
-                </p>
+                                <input name ="odivision"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Old Position</label></div>
+                                <div class="col-md-4">
+
+                                <input name ="oposition"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">New Division</label></div>
+                                <div class="col-md-4">
+
+                                <input name ="ndivision"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">New Position</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="nposition"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Effective Date</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="edate"  type="date" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <button class="btn btn-success pull-right" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                    </div>
                 </div>
-
-                <div class ="col-xs-2">
-                <p>
-                  <label for="">Employee Name</label>
-                  <input name ="ename" type="text" class="form-control" for="" placeholder=""></p>
-                </div>
-
-
-
-                   <div class ="col-xs-2">
-                <p><label for="">Old Division</label>
-                  <input name ="odivision"  type="text" class="form-control" for="" placeholder=""></p>
-                </div>
-
-                   <div class ="col-xs-2">
-                <p><label for="">Old Position</label>
-                  <input name ="oposition"  type="text" class="form-control" for="" placeholder=""></p>
-                </div>
-
-                   <div class ="col-xs-2">
-                <p><label for="">New Division</label>
-                 <input name ="ndivision"  type="text" class="form-control" for="" placeholder=""></p>
-                 </p>
-                </div>
-                  </div>
-                    <p></p>
-                  <div class="box-footer">
-                   <div class ="col-xs-2">
-                <p><label for="">New Position</label>
-                  <input  name ="nposition"  type="text" class="form-control" for="" placeholder=""></p>
-                </div>
-
-                   <div class ="col-xs-3">
-                <p><label for="">Effective Date</label>
-                  <input  name ="edate"  type="date" class="form-control" for="" placeholder=""></p>
-                </div>  
-
-                 
-              </div>
-              <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-success" >Submit</button>
-              </div>
-            </form>
+            </div>
+    </section>
          
    <% include ../../partials/footer %> 
