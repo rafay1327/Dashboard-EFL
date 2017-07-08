@@ -1,0 +1,65 @@
+<% include ../../partials/header %> 
+ <p style="font-size: 24px">Transfers | EDIT</p> 
+            <form role="form" method ="POST" action="<%= object._id%>" >
+            <input type="hidden" name="_method" value="patch"> 
+            <input type="hidden" name="_id" value="<%= object._id %>">
+              <div class="box-body">
+                
+            
+                <div class="box-footer " >
+               
+
+                <div class ="col-xs-2">
+                <p>
+                  <label for="position">P#</label>
+                  <input type="text" name ="pno" class="form-control" value="<%= object.pno %>" for="position" placeholder="">
+                </p>
+                </div>
+
+                 <div class ="col-xs-2">
+                <p>
+                  <label for="">Employee Name</label>
+                  <input name ="ename" type="text" class="form-control" value="<%= object.ename %>" for="" placeholder=""></p>
+                </div>
+
+
+
+                   <div class ="col-xs-2">
+                <p><label for="">Old Division</label>
+                  <input name ="odivision"  type="text" class="form-control" value="<%= object.odivision %>" for="" placeholder=""></p>
+                </div>
+
+                   <div class ="col-xs-2">
+                <p><label for="">Old Position</label>
+                  <input name ="oposition"  type="text" class="form-control" value="<%= object.oposition %>" for="" placeholder=""></p>
+                </div>
+
+                   <div class ="col-xs-2">
+                <p><label for="">New Division</label>
+                 <input name ="ndivision"  type="text" class="form-control" value="<%= object.ndivision %>" for="" placeholder=""></p>
+                 </p>
+                </div>
+                  </div>
+                    <p></p>
+                  <div class="box-footer">
+                   <div class ="col-xs-2">
+                <p><label for="">New Position</label>
+                  <input  name ="nposition"  type="text" class="form-control" value="<%= object.nposition %>" for="" placeholder=""></p>
+                </div>
+
+                   <div class ="col-xs-3">
+                <p><label for="">Effective Date</label>
+                  <input  name ="edate"  type="date" class="form-control" value="<%= object.edate %>" for="" placeholder=""></p>
+                </div>  
+
+                
+                </div>
+                     <div class="box-body" style="margin-top:24px;">
+                          <input class="btn btn-success" type="submit">
+                          <a href="/transfers" class="btn btn-danger">Go Back</a>
+                    </div>
+  
+              </div>
+              <!-- /.box-body -->
+            </form>
+<% include ../../partials/footer %> 

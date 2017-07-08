@@ -1,0 +1,70 @@
+<% include ../../partials/header %> 
+ <p style="font-size: 24px">Attrition | EDIT</p> 
+            <form role="form" method ="POST" action="<%= object._id%>" >
+            <input type="hidden" name="_method" value="patch"> 
+            <input type="hidden" name="_id" value="<%= object._id %>">
+              <div class="box-body">
+                
+            
+                <div class="box-footer " >
+               
+
+                <div class ="col-xs-2">
+                <p>
+                  <label for="">Employee Categories</label>
+                  <input type="text" name ="ecategories" class="form-control" value="<%= object.ecategories %>" for="" placeholder="">
+                </p>
+                </div>
+
+                 <div class ="col-xs-2">
+                <p>
+                  <label for="">Month</label>
+                    <p> <select name="month" >
+                    <option selected="<%= object.month %>" value="<%= object.month %>"><%= object.month %></option>
+                    <option value="">January</option>
+                         <option value="">February</option>
+                         <option value="">March</option>
+                         <option value="">April</option>
+                         <option value="">May</option>
+                         <option value="">June</option>
+                         <option value="">July</option>
+                         <option value="">August</option>
+                         <option value="">September</option>
+                         <option value="">October</option>
+                         <option value="">Novemeber</option>
+                         <option value="">December</option>
+                         </select></p>
+                </div>
+
+
+
+                   <div class ="col-xs-2">
+                <p><label for="">Average</label>
+                  <input name ="average"  type="text" class="form-control" value="<%= object.average %>" for="" placeholder=""></p>
+                </div>
+
+                   <div class ="col-xs-2">
+                <p><label for="">Left</label>
+                  <input name ="left"  type="text" class="form-control" value="<%= object.left %>" for="" placeholder=""></p>
+                </div>
+
+                   <div class ="col-xs-2">
+                <p><label for="">Percentage</label>
+                 <input name ="percentage"  type="text" class="form-control" value="<%= object.percentage %>" for="" placeholder=""></p>
+                 </p>
+                </div>
+                  </div>
+                    <p></p>
+                   
+
+                
+                </div>
+                     <div class="box-body" style="margin-top:24px;">
+                          <input class="btn btn-success" type="submit">
+                          <a href="/transfers" class="btn btn-danger">Go Back</a>
+                    </div>
+  
+              </div>
+              <!-- /.box-body -->
+            </form>
+<% include ../../partials/footer %> 
