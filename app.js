@@ -8,18 +8,19 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
 
-
+// routes
 var index = require('./routes/index');
 var users = require('./routes/users');
 var dvRouter = require('./routes/dvRouter');
 var transfersRouter= require('./routes/transfersRouter');
 var attritionRouter= require('./routes/attritionRouter');
+var aaRouter = require('./routes/aaRouter');
+
+
 
 var app = express();
 
 // view engine setup
-
-
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 // uncomment after placing your favicon in /public
@@ -35,6 +36,7 @@ app.use('/users', users);
 app.use('/transfers', transfersRouter);
 app.use('/dairyvac', dvRouter);
 app.use('/attrition', attritionRouter);
+app.use('/approved_actual', aaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
