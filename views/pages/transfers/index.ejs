@@ -1,0 +1,79 @@
+  <% include ../../partials/header %> 
+
+
+  <div class = "col-md-12 container-fluid">
+
+    <div class="container-fluid">
+     
+      <h1> Transfers</h1><p class ="pull-right"> <a href="/" class ="btn btn-primary">Back</a></p>
+
+      <p>
+       <a class="btn btn-primary btn-large" href="transfers/new">Add</a>
+
+     </p>
+
+
+
+   </div>
+ </div>
+
+ <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Query" class="form-control">
+
+ <div class = "box" >
+  <div>
+
+    <table id="myTable" class="table table-bordered table-striped">
+      <tr class="header">
+
+        <th>P#</th>
+        <th>Employee Name</th>
+        <th>Old Division</th>
+        <th>Old Position</th>
+        <th>New Division</th>
+        <th>New Position</th>
+        <th>Effective Date</th>
+
+      </tr>
+      <% transfers.forEach(function(obj){%>
+      <tr>
+        <td><%= obj.pno %></td>
+        <td><%= obj.ename  %></td>
+        <td><%= obj.odivision %></td>
+        <td><%= obj.oposition %></td>
+        <td><%= obj.ndivision %></td>
+        <td><%= obj.nposition %></td>
+        <td><%= obj.edate %></td>   
+        <td><a class="btn btn-primary" href="transfers/<%=obj._id%>">Edit</a></td>
+        <td><a class="btn btn-danger" href="/transfers/delete/<%=obj._id%>">Delete</a></td>
+      </tr>
+      <% }); %>
+    </table>
+
+
+  </div>
+</div>
+<script>
+  function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+
+</script>
+
+<% include ../../partials/footer %> 
