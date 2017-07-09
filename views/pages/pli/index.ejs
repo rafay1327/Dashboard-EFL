@@ -1,0 +1,76 @@
+  <% include ../../partials/header %> 
+
+
+  <div class = "col-md-12 container-fluid">
+
+    <div class="container-fluid">
+    
+      <h1> PLI Conducted | All</h1><p class ="pull-right"> <a href="/" class ="btn btn-primary btn-lg">Back</a></p>
+
+      <p>
+       <a class="btn btn-primary btn-lg" href="pli/new">Add</a> 
+       <a class="btn btn-primary btn-lg" href="pli/stats" style="margin-left:10px">View Statistics</a> 
+
+     </p>
+
+
+
+   </div>
+ </div>
+
+ <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search something..." class="form-control " style="width:25%; margin-bottom:8px; margin-left:5px">
+
+    <table id="myTable" class="table table-bordered table-striped">
+      <tr class="header">
+
+        <th>#</th>
+        <th>Employee Name</th>
+        <th>CNIC</th>
+        <th>Date</th>
+        <th>Position</th>
+        <th>Status</th>
+        <th></th>
+        <th></th>
+      </tr>
+      <% pli.forEach(function(obj){%>
+
+      <tr>
+	        <td><%=obj.s_no %></td> 
+	        <td><%= obj.name %></td>
+	        <td><%= obj.cnic %> </td>
+	        <td><%= obj.date %></td>
+	        <td><%= obj.position %></td>
+	        <td><%= obj.status %></td>
+	        
+        <td><a class="btn btn-primary" href="pli/<%=obj._id%>">Edit</a></td>
+        <td><a class="btn btn-danger" href="/pli/delete/<%=obj._id%>">Delete</a></td>
+      </tr>
+      <% }); %>
+    </table>
+
+
+<script>
+  function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+
+</script>
+
+<% include ../../partials/footer %> 

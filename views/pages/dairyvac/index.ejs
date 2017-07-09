@@ -4,11 +4,11 @@
   <div class = "col-md-12 container-fluid">
 
     <div class="container-fluid">
-      <p>Need to show a row with 2016 vacancies for each Tier for Dairy</p>
-      <h1> Dairy Vacancies</h1><p class ="pull-right"> <a href="/" class ="btn btn-primary">Back</a></p>
+    
+      <h1> Dairy Vacancies</h1><p class ="pull-right"> <a href="/" class ="btn btn-primary btn-lg">Back</a></p>
 
       <p>
-       <a class="btn btn-primary btn-large" href="dairyvac/new">Add</a>
+       <a class="btn btn-primary btn-lg" href="dairyvac/new">Add</a>
 
      </p>
 
@@ -17,10 +17,7 @@
    </div>
  </div>
 
- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Query" class="form-control">
-
- <div class = "box" >
-  <div>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search something..." class="form-control " style="width:25%; margin-bottom:8px; margin-left:5px">
 
     <table id="myTable" class="table table-bordered table-striped">
       <tr class="header">
@@ -42,7 +39,7 @@
         <th>Acceptance Date</th>
         <th>DOJ</th>
         <th>Status</th>
-        <th>Days to Hire</th>
+        <th>Hire Days</th>
 
       </tr>
       <% dairyvacancy.forEach(function(obj){%>
@@ -77,8 +74,6 @@
     </table>
 
 
-  </div>
-</div>
 <script>
   function myFunction() {
   // Declare variables 

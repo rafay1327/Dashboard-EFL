@@ -1,0 +1,74 @@
+  <% include ../../partials/header %> 
+
+
+
+  <div class ="col-md-12"><p class ="pull-right"> <a href="/transfers" class ="btn btn-primary btn-lg" style="margin-top:15px;">Back</a></p><h2>Transfers</h2></div>
+ 
+            <form role="form" method ="POST" action="./new" >
+              <div class="box-body">
+                
+                <div class="box-footer " >
+                
+
+                <div class ="col-xs-2">
+                <p>
+                  <label for="pno">P#</label>
+                  <input type="text" name ="pno" class="form-control" for="pno" placeholder="">
+                </p>
+                </div>
+
+                <div class ="col-xs-2">
+                <p>
+                  <label for="">Employee Name</label>
+                  <input name ="ename" type="text" class="form-control" for="" placeholder=""></p>
+                </div>
+
+
+
+                   <div class ="col-xs-2">
+                <p><label for="">Old Division</label>
+                  <input name ="odivision"  type="text" class="form-control" for="" placeholder=""></p>
+                </div>
+
+                   <div class ="col-xs-2">
+                <p><label for="">Old Position</label>
+                  <input name ="oposition"  type="text" class="form-control" for="" placeholder=""></p>
+                </div>
+
+                   <div class ="col-xs-2">
+                <p><label for="">New Division</label>
+                 <input name ="ndivision"  type="text" class="form-control" for="" placeholder=""></p>
+                 </p>
+                </div>
+                  </div>
+                    <p></p>
+                  <div class="box-footer">
+                   <div class ="col-xs-2">
+                <p><label for="">New Position</label>
+                  <input  name ="nposition"  type="text" class="form-control" for="" placeholder=""></p>
+                </div>
+
+                   <div class ="col-xs-3">
+                <p><label for="">Effective Date</label>
+                  <input  name ="edate"  type="date" class="form-control" for="" placeholder=""></p>
+                </div>  
+
+                  <div class ="col-xs-2" >
+               <p><label for="" >Appointment/Transfer</label>
+                  <select name="e_status" style="width:70%;height:30px;">
+                    <option value="Appointment">Appointment</option>
+                    <option value="Transfer">Transfer</option>
+                  </select></p>
+                </div>
+                  
+                <div class="col-xs-2">
+                 <button type="submit" class="btn btn-success btn-lg" style="margin-top:10px" >Submit</button>
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+             
+         
+            </form>
+         
+   <% include ../../partials/footer %> 

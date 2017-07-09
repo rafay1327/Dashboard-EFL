@@ -1,5 +1,5 @@
 <% include ../../partials/header %> 
- <p style="font-size: 24px">Dairy Vacancies | EDIT</p> 
+ <p style="font-size: 24px; padding:10px">Dairy Vacancies | EDIT</p> 
             <form role="form" method ="POST" action="<%= object._id%>" >
             <input type="hidden" name="_method" value="patch"> 
             <input type="hidden" name="_id" value="<%= object._id %>">
@@ -103,18 +103,20 @@
                 </div>
                 </div>
                 <p></p>
+                <div class="box-footer">
                    <div class ="col-xs-2">
                 <p><label for="">Status</label>
                   <input name ="status" type="text" class="form-control" for="" value="<%= object.status %>"  placeholder=""></p>
 
+                  </div>
                 </div>
-                
-                     <div class="box-body" style="margin-top:24px;">
-                          <input class="btn btn-success" type="submit">
-                          <a href="/dairyvac" class="btn btn-danger">Go Back</a>
+                      <div class="col-md-4 " style="margin:10px"> 
+                          <a class="btn btn-success btn-lg" type="submit">Submit</a>
+                          <a href="/dairyvac" class="btn btn-danger btn-lg" style="margin-left:15px;">Cancel</a>
+                      </div>  
+
                     </div>
   
-              </div>
               <!-- /.box-body -->
             </form>
 <% include ../../partials/footer %> 

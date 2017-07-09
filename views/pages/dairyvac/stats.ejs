@@ -1,48 +1,53 @@
+  <% include ../../partials/header %> 
+<div class="container-fluid">
 
-<% include partials/header %>
-<style>
+<div class="col-md-4" style="padding:5px">
+<div class="container">
+	<a href="/dairyvac" class="btn btn-primary">View Tabular</a>
+	
 
-form {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  position: absolute;
-  left: 10px;
-  top: 10px;
-}
+</div>
 
-label {
-  display: block;
-}
-
-</style>
-  <!-- Content Wrapper. Contains page content -->
- <section class="content-header">
-
-
-      <form>
+</div>
+<div class = "container col-md-4" style="padding:5px"> 
+<form>
   <label><input type="radio" name="mode" value="grouped"> Grouped</label>
   <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
 </form>
-    
+</div>
 
 
-    </section>
 
-    <!-- Main content -->
-    <section class="content container-fluid">
+    <table id="myTable" class="table table-bordered table-striped">
+  
+    <%
+    var t4=0,t5=0;
+    dairyvacancies_all.forEach(function(obj){%>
+ 	
+ 	<% if(obj.tier === "Tier V"){ 
+ 	t5 = t5+ 1;
+ 	else if(obj.tier==="Tier IV"){
+ 		t4 = t4+1;
+ 	 %>
+ 	}
+    	 
+     	
+      
+    <% } %>
 
-        <svg width="500" height="500"></svg>
 
 
-    </section>
+   
+      <% }); %>
+      <td><%= t5  %></td>
+      <td><%= t4  %></td>
+    </table>
 
-
+<!-- <svg width="960" height="500"></svg> -->
 <script>
 
-
-
-  
-var n = 2, // The number of series.
-    m = 1; // The number of values pe
+var n = 1, // The number of series.
+    m = 3; // The number of values pe
 
 // The xz array has m elements, representing the x-values shared by all series.
 // The yz array has n elements, representing the y-values of each of the n series.
@@ -50,10 +55,8 @@ var n = 2, // The number of series.
 // The y01z array has the same structure as yz, but with stacked [y₀, y₁] instead of y.
 
 
-
-
 var xz = d3.range(m),
-    yz = d3.range(n).map(function() { return bumps(m); }),
+    yz = d3.range(n).map(function() { return bumps1(m); }),
     y01z = d3.stack().keys(d3.range(n))(d3.transpose(yz)),
     yMax = d3.max(yz, function(y) { return d3.max(y); }),
     y1Max = d3.max(y01z, function(y) { return d3.max(y, function(d) { return d[1]; }); });
@@ -118,6 +121,7 @@ function changed() {
 }
 
 function transitionGrouped() {
+
   y.domain([0, yMax]);
 
   rect.transition()
@@ -128,6 +132,7 @@ function transitionGrouped() {
     .transition()
       .attr("y", function(d) { return y(d[1] - d[0]); })
       .attr("height", function(d) { return y(0) - y(d[1] - d[0]); });
+
 }
 
 function transitionStacked() {
@@ -146,7 +151,7 @@ function transitionStacked() {
 // Returns an array of m psuedorandom, smoothly-varying non-negative numbers.
 // Inspired by Lee Byron’s test data generator.
 // http://leebyron.com/streamgraph/
-function bumps(m) {
+function bumps1(m) {
   var values = [], i;
 
   // Initialize with uniform random values in [0.1, 0.2).
@@ -175,4 +180,9 @@ function bumps(m) {
 
 </script>
 
-<% include partials/footer %>
+</div>
+
+
+
+<% include ../../partials/footer %> 
+

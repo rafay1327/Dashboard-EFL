@@ -37,6 +37,11 @@
 
   });
 
+ dvRouter.get( '/stats', function(req, res) {
+  var dairyvacancies = db.dairyvacancy.find({});
+    res.render('pages/dairyvac/stats', {dairyvacancies_all : dairyvacancies });
+
+  });
 
 
 //============================================================================================//
@@ -99,6 +104,8 @@ dvRouter.get('/delete/:id',  function(req, res, next) {
  res.json(db.dairyvacancy.remove({ _id: req.params.id }), res.redirect('/dairyvac'));
 
 });
+
+
 
 module.exports = dvRouter;
 

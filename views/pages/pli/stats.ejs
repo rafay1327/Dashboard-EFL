@@ -1,5 +1,4 @@
-
-<% include partials/header %>
+<% include ../../partials/header %>
 <style>
 
 form {
@@ -23,8 +22,6 @@ label {
   <label><input type="radio" name="mode" value="stacked" checked> Stacked</label>
 </form>
     
-
-
     </section>
 
     <!-- Main content -->
@@ -32,15 +29,13 @@ label {
 
         <svg width="500" height="500"></svg>
 
-
     </section>
+
+
 
 
 <script>
 
-
-
-  
 var n = 2, // The number of series.
     m = 1; // The number of values pe
 
@@ -48,8 +43,6 @@ var n = 2, // The number of series.
 // The yz array has n elements, representing the y-values of each of the n series.
 // Each yz[i] is an array of m non-negative numbers representing a y-value for xz[i].
 // The y01z array has the same structure as yz, but with stacked [y₀, y₁] instead of y.
-
-
 
 
 var xz = d3.range(m),
@@ -151,7 +144,7 @@ function bumps(m) {
 
   // Initialize with uniform random values in [0.1, 0.2).
   for (i = 0; i < m; ++i) {
-    values[i] = 2 + Math.random();
+    values[i] = 10;
   }
 
   // // Add five random bumps.
@@ -174,5 +167,19 @@ function bumps(m) {
 }
 
 </script>
+<script>
+ var clear=0,not_clear=0;
 
-<% include partials/footer %>
+ pli_all.forEach(function(obj){
+    if(obj.status==="Clear"){
+        clear++;
+    }
+    else{
+      not_clear++;
+    }
+
+  });
+
+ alert(not_clear);
+</script>
+<% include ../../partials/footer %>
