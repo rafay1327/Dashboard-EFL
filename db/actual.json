@@ -1,0 +1,309 @@
+[
+	{
+		"year": "2016",
+		"month": "april",
+		"marketing": {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"dairy_sales": {
+			"nmpts": 0,
+			"tierv": 109,
+			"tieriv": 99,
+			"tieriii": 73,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"technical_operation" : {
+			"nmpts": 219,
+			"tierv": 646,
+			"tieriv": 177,
+			"tieriii": 182,
+			"tierii": 8,
+			"tieri": 3
+		},
+		"finance_sbd" : {
+			"nmpts": 0,
+			"tierv": 8,
+			"tieriv": 9,
+			"tieriii": 29,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"hr_admin" : {
+			"nmpts": 0,
+			"tierv": 0,
+			"tieriv": 6,
+			"tieriii": 24,
+			"tierii": 2,
+			"tieri": 1
+		},
+		"ice_cream" : {
+			"nmpts": 0,
+			"tierv": 20,
+			"tieriv": 53,
+			"tieriii": 30,
+			"tierii": 1,
+			"tieri": 1
+		},
+		"audit" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 2,
+			"tieriii": 6,
+			"tierii": 1,
+			"tieri": 0
+		},
+		"general_management" : {
+			"nmpts": 0,
+			"tierv": 0,
+			"tieriv": 0,
+			"tieriii": 1,
+			"tierii": 0,
+			"tieri": 1
+		},
+		"legal" : {
+			"nmpts": 0,
+			"tierv": 0,
+			"tieriv": 0,
+			"tieriii": 0,
+			"tierii": 1,
+			"tieri": 0
+		}
+	},
+	{
+		"year": 2015,
+		"month": "june",
+		"marketing": {
+
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"dairy_sales": {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"technical_operation" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"finance_sbd" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"hr_admin" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"ice_cream" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"audit" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"general_management" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"legal" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		}
+	},
+	{
+		"year": 2015,
+		"month": "march",
+		"marketing": {
+
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"dairy_sales": {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"technical_operation" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"finance_sbd" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"hr_admin" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"ice_cream" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"audit" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"general_management" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"legal" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		}
+	},
+	{
+		"year": 2015,
+		"month": "april",
+		"marketing": {
+
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"dairy_sales": {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"technical_operation" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"finance_sbd" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"hr_admin" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"ice_cream" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"audit" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"general_management" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		},
+		"legal" : {
+			"nmpts": 0,
+			"tierv": 1,
+			"tieriv": 0,
+			"tieriii": 24,
+			"tierii": 3,
+			"tieri": 1
+		}
+	}
+]

@@ -1,57 +1,74 @@
 <% include ../../partials/header %> 
-<div class ="col-md-12"><p class ="pull-right"> <a href="/pli" class ="btn btn-primary btn-lg" style="margin-top:15px;">Back</a></p><h2>Pli Conducted| Edit</h2></div>
-            <form role="form" method ="POST" action="<%= object._id%>" >
+
+
+<section class="content-header">
+    <h1>PLI</h1>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Edit</h3>
+                </div>
+                <form role="form" method ="POST" action="<%= object._id%>" >
             <input type="hidden" name="_method" value="patch"> 
             <input type="hidden" name="_id" value="<%= object._id %>">
-              <div class="box-body">
-                
-            
-                <div class="box-footer" >
-               
-
-                
-                 <div class ="col-xs-2">
-                <p>
-                  <label for="">Employee Name</label>
-                  <input name ="ename" type="text" class="form-control" value="<%= object.name %>" for="" placeholder=""></p>
+                    <div class="box-body">
+                        <div class="row form-group">
+                            <div class="col-md-3 text-right">
+                                <label for="">Employee Name</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input name="name" type="text" class="form-control" for="" placeholder="" value="<%= object.name %>">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-3 text-right">
+                                <label for="">CNIC</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input name="cnic" type="text" class="form-control" for="" placeholder="" value="<%= object.cnic %>">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-3 text-right">
+                                <label for="date">Date</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input name="date" type="date" class="form-control" for="date" placeholder="" value="<%= object.date %>">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-3 text-right">
+                                <label for="position">Position</label>
+                            </div>
+                            <div class="col-md-4">
+                                <input name="position" type="text" class="form-control" for="position" placeholder="" value="<%= object.position %>">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-md-3 text-right">
+                                <label for="" style="padding-left:20px">Status</label>
+                            </div>
+                            <div class="col-md-4">
+                                <select name="status" selected="<%= object.status %>">
+                                    <option value="Clear">Clear</option>
+                                    <option value="Not clear">Not Clear</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <button class="btn btn-success pull-right" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                </form>
                 </div>
+            </div>
+        </div>
+</section>
 
-
-
-                   <div class ="col-xs-2">
-                <p><label for="">CNIC</label>
-                  <input name ="cnic"  type="text" class="form-control" value="<%= object.cnic %>" for="" placeholder=""></p>
-                </div>
-
-           
-                   <div class ="col-xs-2">
-                <p><label for="">Position</label>
-                 <input name ="position"  type="text" class="form-control" value="<%= object.position %>" for="" placeholder=""></p>
-                 </p>
-                  </div>
-                     <div class ="col-xs-2" >
-               <p><label for="" style="margin-left:15px" >Status</label>
-                  <select name="status" selected="<%= object.status %>" style="width:70%;height:33px">
-                    <option value="Clear">Clear</option>
-                    <option value="Not clear">Not Clear</option>
-                  
-                  </select></p>
-                </div>
-
-                   <div class ="col-xs-3">
-                <p><label for="">Effective Date</label>
-                  <input  name ="date"  type="date" class="form-control" value="<%= object.edate %>" for="" placeholder=""></p>
-                </div>  
-
-
-                </div>
-               
-                     <div class="box-body" style="margin-top:24px; ">
-                          <input class="btn btn-success btn-lg" stle="margin-left:15px;" type="submit">
-                          <a href="/transfers" class="btn btn-danger btn-lg" style="margin-left:15px;">Cancel </a>
-                    </div>
-  
-              </div>
-              <!-- /.box-body -->
-            </form>
 <% include ../../partials/footer %> 

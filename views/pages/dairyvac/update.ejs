@@ -1,122 +1,166 @@
 <% include ../../partials/header %> 
- <p style="font-size: 24px; padding:10px">Dairy Vacancies | EDIT</p> 
-            <form role="form" method ="POST" action="<%= object._id%>" >
-            <input type="hidden" name="_method" value="patch"> 
-            <input type="hidden" name="_id" value="<%= object._id %>">
-              <div class="box-body">
-                
-            
-                <div class="box-footer " >
-               
 
-                <div class ="col-xs-2">
-                <p>
-                  <label for="pos">Position Title</label>
-                  <input type="text" name ="position" class="form-control" value="<%= object.position %>" for="pos" placeholder="">
-                </p>
-                </div>
-
-                <div class ="col-xs-2">
-                <p>
-                  <label for="">Region</label>
-                  <input name ="region" type="text" class="form-control" for=""  value="<%= object.region %>" placeholder=""></p>
-                </div>
-
-
-
-                   <div class ="col-xs-2">
-                <p><label for="">Division</label>
-                  <input name ="division"  type="text" class="form-control" for="" value="<%= object.division %>"  placeholder=""></p>
-                </div>
-
-                   <div class ="col-xs-2">
-                <p><label for="">TA FP</label>
-                  <input name ="ta_fp"  type="text" class="form-control" for=""  value="<%= object.ta_fp %>" placeholder=""></p>
-                </div>
-
-                   <div class ="col-xs-2">
-                <p> <select name="tier" >
-                    <option selected="<%= object.tier %>" value="<%= object.tier %>"><%= object.tier %></option>
-                    <option value="Tier V">Tier V</option>
-                    <option value="Tier IV">Tier IV</option>
-                    <option value="Tier III">Tier III</option>
-                    <option value="Tier II">Tier II</option>
-                    <option value="Tier I">Tier I</option>
-                  </select></p>
-                </div>
-                  </div>
-                    <p></p>
-                  <div class="box-footer">
-                   <div class ="col-xs-2">
-                <p><label for="">Last Incumbent</label>
-                  <input  name ="last_incumbent"  type="text" class="form-control" value="<%= object.last_incumbent %>"  for="" placeholder=""></p>
-                </div>
-
-                   <div class ="col-xs-3">
-                <p><label for="">Vacant Since</label>
-                  <input  name ="vacant_since"  type="date" class="form-control" for="" value="<%= object.vacant_since %>"  placeholder=""></p>
-                </div>  
-
-                   <div class ="col-xs-3">
-                <p><label for="">CEO Approval Date </label>
-                  <input name ="ceo_approval_date" type="date" class="form-control" for="" value="<%= object.ceo_approval_date %>"  placeholder=""></p>
-                </div>
-                </div>  
-                <p></p>
-                 <div class="box-footer">
-                   <div class ="col-xs-4">
-                <p><label for="">Number of Candidates Sourced</label>
-                  <input name ="n_candidates_sourced" type="text" class="form-control" for="" value="<%= object.n_candidates_sourced %>"  placeholder=""></p>
-                </div>
-                   
-                   <div class ="col-xs-4">
-                <p><label for="">Number of Tested Candidates</label>
-                  <input name ="n_candidates_tested" type="text" class="form-control" for="" value="<%= object.n_candidates_tested %>"  placeholder=""></p>
-                </div>
-                  </div>
-                  <p></p>
-
-                   <div class="box-footer">
-                  <div class ="col-xs-1">
-                <p> <label for="">Interviews</label>
-                  <input name ="interviews" type="text" class="form-control" for="" value="<%= object.interviews %>"  placeholder=""></p>
-                </div>
-
-                   <div class ="col-xs-2">
-                <p><label for="">Shortlisted Candidates</label>
-                  <input name ="shortlisted" type="text" class="form-control" for="" value="<%= object.shortlisted %>"  placeholder=""></p>
-                </div>
-
-                   <div class ="col-xs-3">
-                <p><label for="">Offer Date</label>
-                  <input name ="offer_date" type="date" class="form-control" for="" value="<%= object.offer_date %>"  placeholder=""></p>
-                </div>
-
-                   <div class ="col-xs-3">
-                <p><label for="">Acceptance Date</label>
-                  <input  name ="acceptance_date" type="date" class="form-control" for="" value="<%= object.acceptance_date %>"  placeholder=""></p>
-                </div>
-
-                   <div class ="col-xs-3">
-                <p><label for="">DOJ</label>
-                  <input name ="doj" type="date" class="form-control" for="" value="<%= object.doj %>"  placeholder=""></p>
-                </div>
-                </div>
-                <p></p>
-                <div class="box-footer">
-                   <div class ="col-xs-2">
-                <p><label for="">Status</label>
-                  <input name ="status" type="text" class="form-control" for="" value="<%= object.status %>"  placeholder=""></p>
-
-                  </div>
-                </div>
-                      <div class="col-md-4 " style="margin:10px"> 
-                          <a class="btn btn-success btn-lg" type="submit">Submit</a>
-                          <a href="/dairyvac" class="btn btn-danger btn-lg" style="margin-left:15px;">Cancel</a>
-                      </div>  
-
+<section class="content-header">
+        <h1>Dairy Vacancies</h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Create new entry</h3>
                     </div>
-  
-              <!-- /.box-body -->
-            </form>
+                        <form role="form" method ="POST" action="<%= object._id%>" >
+                          <input type="hidden" name="_method" value="patch"> 
+                          <input type="hidden" name="_id" value="<%= object._id %>">
+                    <div class="box-body">
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="pos">Position Title</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="position" class="form-control" for="pos" placeholder="" value="<%= object.position %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="pos">Region</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="region" type="text" class="form-control" for="" placeholder="" value="<%= object.region %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="pos">Division</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="division" type="text" class="form-control" for="" placeholder="" value="<%= object.division %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="pos">TA FP</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="ta_fp" type="text" class="form-control" for="" placeholder="" value="<%= object.ta_fp %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="pos">Tier</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select name="tier">
+                                        <option selected="<%= object.tier %>" value="<%= object.tier %>"><%= object.tier %></option>
+                                        <option value="Tier V">Tier V</option>
+                                        <option value="Tier IV">Tier IV</option>
+                                        <option value="Tier III">Tier III</option>
+                                        <option value="Tier II">Tier II</option>
+                                        <option value="Tier I">Tier I</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Last Incumbent</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="last_incumbent" type="text" class="form-control" for="" placeholder="" value="<%= object.last_incumbent %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Vacant Since</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="vacant_since" type="date" class="form-control" for="" placeholder="" value="<%= object.vacant_since %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">CEO Approval Date </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input id="ceo_approval_id" name="ceo_approval_date" type="date" class="form-control" for="" placeholder="" value="<%= object.ceo_approval_id %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Number of Candidates Sourced</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="n_candidates_sourced" type="text" class="form-control" for="" placeholder="" value="<%= object.n_candidates_sourced %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Number of Tested Candidates</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="n_candidates_tested" type="text" class="form-control" for="" placeholder="" value="<%= object.n_candidates_tested %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Interviews</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="Interviews" type="text" class="form-control" for="" placeholder="" value="<%= object.Interviews %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Shortlisted Candidates</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="shortlisted" type="text" class="form-control" for="" placeholder="" value="<%= object.shortlisted %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Offer Date</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="offer_date" type="date" class="form-control" for="" placeholder="" value="<%= object.offer_date %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Acceptance Date</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="acceptance_date" type="date" class="form-control" for="" placeholder="" value="<%= object.acceptance_date %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">DOJ</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input id="doj_id" name="doj" type="date" class="form-control" for="" placeholder="" value="<%= object.doj_id %>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Status</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="status" type="text" class="form-control" for="" placeholder="" value="<%= object.status %>">
+                                </div>
+                            </div>
+                    </div>
+                    <div class="box-footer">
+                      <div class="row">
+                        <div class="col-md-7">
+                      <button class="btn btn-success pull-right" type="submit">Submit</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </section>
 <% include ../../partials/footer %> 

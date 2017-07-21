@@ -6,9 +6,11 @@
   var dvRouter = express.Router();
   var db = require('diskdb');
   var moment = require('moment');
-
   db = db.connect('db', ['dairyvacancy']);
+  
   var DV = require('../models/dairyvac');
+
+
   dvRouter.get('/new', function(req, res, next) {
     res.render('pages/dairyvac/new');
       //  res.send('respond with dairy vacancies');
@@ -37,11 +39,6 @@
 
   });
 
- dvRouter.get( '/stats', function(req, res) {
-  var dairyvacancies = db.dairyvacancy.find({});
-    res.render('pages/dairyvac/stats', {dairyvacancies_all : dairyvacancies });
-
-  });
 
 
 //============================================================================================//
@@ -104,8 +101,6 @@ dvRouter.get('/delete/:id',  function(req, res, next) {
  res.json(db.dairyvacancy.remove({ _id: req.params.id }), res.redirect('/dairyvac'));
 
 });
-
-
 
 module.exports = dvRouter;
 

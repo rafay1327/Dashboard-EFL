@@ -31,8 +31,13 @@
 
   });
 
+ transfersRouter.get( '/stats', function(req, res) {
+  var transfers = db.transfers.find({});
+  
+    res.render('pages/transfers/stats', { transfers_all : transfers });
 
-
+  });
+//===================================================================================================
 
 
 var options = {
@@ -64,7 +69,7 @@ transfersRouter.post('/:id',function(req, res, next) {
       ndivision :req.body.ndivision,
       nposition :req.body.nposition,
       edate :req.body.edate,
-      e_status : req.body.e_status
+      status: req.body.status
 
     }, {options}
     );

@@ -8,8 +8,8 @@ var transfersSchema = new mongoose.Schema({
       ndivision : String,
       nposition : String,
       edate : Date,
-      e_status : String,
-      ap_tr : String
+      status : String
+     
     
 });
 

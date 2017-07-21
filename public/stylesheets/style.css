@@ -26,14 +26,10 @@ a {
   background-color: #555;
 }
 
-form {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  position: absolute;
-  left: 10px;
-  top: 10px;
+input:invalid {
+    background-color: #FFAAAA;
 }
 
-label {
-  display: block;
+input:valid {
+    background-color: #AAFFAA;
 }
-

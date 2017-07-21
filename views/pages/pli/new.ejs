@@ -1,75 +1,69 @@
-  <% include ../../partials/header %> 
-
-
-
-  <div class = "col-md-12 container-fluid">
-
-    <div class="container-fluid">
-    <p class ="pull-right"> <a href="/" class ="btn btn-primary btn-lg " style ="margin-to  p:20px">Back</a></p>
-      <h1> PLI Conducted | Add</h1>
-
-      <p>
-       <a class="btn btn-primary btn-lg" href="pli/new">Add</a>
-
-     </p>
-
-
-
-   </div>
- </div>
-            <form role="form" method ="POST" action="./new" >
-              <div class="box-body">
-                
-                <div class="box-footer center" >
-                
-
-              
-                <div class ="col-xs-2">
-                <p>
-                  <label for="">Employee Name</label>
-                  <input name ="name" type="text" class="form-control" for="" placeholder=""></p>
+<% include ../../partials/header %>
+    <section class="content-header">
+        <h1>PLI</h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Create new entry</h3>
+                    </div>
+                    <form action="./new" method="POST">
+                        <div class="box-body">
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Employee Name</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="name" type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">CNIC</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="cnic" type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="date">Date</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="date" type="date" class="form-control" for="date" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="position">Position</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="position" type="text" class="form-control" for="position" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="" style="padding-left:20px">Status</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select name="status" style="width:70%; height:30px">
+                                        <option value="Clear">Clear</option>
+                                        <option value="Not clear">Not Clear</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <button class="btn btn-success pull-right" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                    </div>
                 </div>
-
-
-
-                   <div class ="col-xs-2">
-                <p><label for="">CNIC</label>
-                  <input name ="cnic"  type="text" class="form-control" for="" placeholder=""></p>
-                </div>
-
-                   <div class ="col-xs-2">
-                <p><label for="date">Date</label>
-                  <input name ="date"  type="date" class="form-control" for="date" placeholder=""></p>
-                </div>
-
-                   <div class ="col-xs-2">
-                <p><label for="position">Position</label>
-                 <input name ="position"  type="text" class="form-control" for="position" placeholder=""></p>
-                 </p>
-                </div>
-
-                 <div class ="col-xs-2" >
-               <p><label for="" style="padding-left:20px">Status</label>
-             
-                  <select name="status" style="width:70%; height:30px">
-                    <option value="Clear">Clear</option>
-                    <option value="Not clear">Not Clear</option>
-                  
-                  </select></p>
-                </div>
-
-                   <div class ="col-xs-2">
-                   <p style="padding-top:9px"></p>
-
-                	 <button type="submit" class="btn btn-success btn-lg" >Submit</button>
-                	</div>
-                  </div>
-            	
-                  
-              <!-- /.box-body -->
-
-
-               
-              </form>
-        
-   <% include ../../partials/footer %> 
+            </div>
+    </section>
+    <% include ../../partials/footer %>

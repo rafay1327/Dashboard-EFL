@@ -36,6 +36,7 @@
 
  pliRouter.get( '/stats', function(req, res) {
   var pli = db.pli.find({});
+  
     res.render('pages/pli/stats', {pli_all : pli });
 
   });
