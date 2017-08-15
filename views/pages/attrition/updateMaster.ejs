@@ -1,0 +1,166 @@
+<% include ../../partials/header %>
+
+<section class="content-header">
+        <h1>Attrition Master</h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Create new entry</h3>
+                    </div>
+                    <form role="form" method ="POST" action="<%= object._id%>" >
+                    <input type="hidden" name="_method" value="patch"> 
+                    <input type="hidden" name="_id" value="<%= object._id %>">
+                        <div class="box-body">
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="pno">Pers.no</label></div>
+                                <div class="col-md-4">
+
+                                <input type="text" name ="Persno" value="<%= object.Persno %>" class="form-control" for="pno" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Personnel number</label></div>
+                                <div class="col-md-4">
+
+                                <input name ="PersonnelNumber" value="<%= object.PersonnelNumber %>" type="text" class="form-control" for="" placeholder="">
+                                        
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Resignation month</label></div>
+                                <div class="col-md-4">
+
+                                <input name ="ResignationMonth" value="<%= object.ResignationMonth %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Gender key</label></div>
+                                <div class="col-md-4">
+
+                                <input name ="GenderKey" value="<%= object.GenderKey %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Entry</label></div>
+                                <div class="col-md-4">
+
+                                <input name ="Entry" value="<%= object.Entry %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Tenure</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="Tenure" value="<%= object.Tenure %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Position</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="Position" value="<%= object.Position %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                             <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">PS Group</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="PSGroup" value="<%= object.PSGroup %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+
+                             <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Tier</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="Tier" value="<%= object.Tier %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                             <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Division</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="Division" value="<%= object.Division %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+
+                             <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Resignation</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="Resignation" value="<%= object.Resignation %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                             <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Resignation reason</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="ResignationReason" value="<%= object.ResignationReason %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+
+                             <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">New Company</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="NewCompany" value="<%= object.NewCompany %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            
+                             <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">PArea</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="PArea" value="<%= object.PArea %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+
+                             <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">New Employee Code</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="NewEmployeeCode" value="<%= object.NewEmployeeCode %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+
+                             <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Location</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="Location" value="<%= object.Location %>"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="box-footer">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <button class="btn btn-success pull-right" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+<% include ../../partials/footer %> 

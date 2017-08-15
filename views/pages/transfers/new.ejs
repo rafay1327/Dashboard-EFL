@@ -1,0 +1,124 @@
+  <% include ../../partials/header %> 
+
+<section class="content-header">
+        <h1>Transfers</h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Create new entry</h3>
+                    </div>
+                    <form action="./new" method="POST">
+                        <div class="box-body">
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="pno">P#</label></div>
+                                <div class="col-md-4">
+
+                                <input type="text" name ="pno" class="form-control" for="pno" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Employee Name</label></div>
+                                <div class="col-md-4">
+
+                                <input name ="ename" type="text" class="form-control" for="" placeholder="">
+                                        
+                                </div>
+                            </div>
+
+                             <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="pos">Old Division</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select name="odivision">
+                                        <option value="Agri Business">Agri Business</option>
+                                        <option value="Dairy Sales">Dairy Sales</option>                               
+                                        <option value="Finance and Strategic Business">Finance and Strategic Business</option>
+                                        <option value="General Management">General Management</option>
+                                        <option value="Human Resources and Admin">Human Resources and Admin</option>
+                                        <option value="Ice Cream">Ice Cream</option>
+                                        <option value="Internal Audit">Internal Audit</option>
+                                        <option value="Technical Operations">Technical Operations</option>
+                                        <option value="Marketing Dairy & Beverages">Marketing Dairy & Beverages</option>
+                                       
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Old Position</label></div>
+                                <div class="col-md-4">
+
+                                <input name ="oposition"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                             <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="ndivision">New Division</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select name="ndivision">
+                                        <option value="Agri Business">Agri Business</option>
+                                        <option value="Dairy Sales">Dairy Sales</option>                               
+                                        <option value="Finance and Strategic Business">Finance and Strategic Business</option>
+                                        <option value="General Management">General Management</option>
+                                        <option value="Human Resources and Admin">Human Resources and Admin</option>
+                                        <option value="Ice Cream">Ice Cream</option>
+                                        <option value="Internal Audit">Internal Audit</option>
+                                        <option value="Technical Operations">Technical Operations</option>
+                                        <option value="Marketing Dairy & Beverages">Marketing Dairy & Beverages</option>
+                                       
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">New Position</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="nposition"  type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Effective Date</label></div>
+                                <div class="col-md-4">
+
+                                <input  name ="edate"  type="date" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            
+                             <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                  <label for="">Employee Status</label></div>
+                                <div class="col-md-4">
+                                     <select name="status" style="width:70%; height:30px">
+                                        <option value="Appointment">Appointment</option>
+                                        <option value="Transfer">Transfer</option>
+                                    </select>
+                              
+                                </div>
+                            </div>
+                        
+                            <div class="box-footer">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                     <button class="btn btn-success pull-right" type="submit" style="margin-left    :8px;">Submit</button>
+                                        <a href="/transfers" class ="btn btn-danger pull-right">Cancel</a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+         
+   <% include ../../partials/footer %> 

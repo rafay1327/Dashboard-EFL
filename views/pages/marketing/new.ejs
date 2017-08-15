@@ -1,0 +1,169 @@
+<% include ../../partials/header %>
+    <section class="content-header">
+        <h1>Marketing Vacancies</h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Create new entry</h3>
+                    </div>
+                    <form action="./new" method="POST">
+                        <div class="box-body">
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="pos">Position Title</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="position" class="form-control" for="pos" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="pos">Region</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="region" type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="pos">Division</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="division" type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="pos">Division</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="division" type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="pos">TA FP</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="ta_fp" type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="pos">Tier</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select name="tier">
+                                        <option value="Tier V">Tier V</option>
+                                        <option value="Tier IV">Tier IV</option>
+                                        <option value="Tier III">Tier III</option>
+                                        <option value="Tier II">Tier II</option>
+                                        <option value="Tier I">Tier I</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Last Incumbent</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="last_incumbent" type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Vacant Since</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="vacant_since" type="date" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">CEO Approval Date </label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input id="ceo_approval_id" name="ceo_approval_date" type="date" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Number of Candidates Sourced</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="n_candidates_sourced" type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Number of Tested Candidates</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="n_candidates_tested" type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Interviews</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="Interviews" type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Shortlisted Candidates</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="shortlisted" type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Offer Date</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="offer_date" type="date" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Acceptance Date</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="acceptance_date" type="date" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">DOJ</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input id="doj_id" name="doj" type="date" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Status</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="status" type="text" class="form-control" for="" placeholder="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <div class="row">
+                                <div class="col-md-7">
+                                    <button class="btn btn-success pull-right" type="submit">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<% include ../../partials/footer %>

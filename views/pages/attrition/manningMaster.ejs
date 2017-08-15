@@ -1,0 +1,131 @@
+  <% include ../../partials/header %> 
+
+<section class="content-header">
+    <h1> Manning Master</h1>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                  <div class="row">
+                    <div class=" col-md-3">
+                      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Query" class="form-control">
+                    </div>
+                    <div class="col-md-9">
+                    </div>
+                  </div>
+                </div>
+                <div class="box-body">
+                    <table id="myTable" class="table table-bordered table-striped">
+                      <tr class="header">
+
+                        <th>Pers.No.</th>
+                        <th>Personnel Number</th>
+                        <th>Cost Ctr</th>
+                        <th>Cost Center</th>
+                        <th>Division</th>
+                        <th>Organizational Unit</th>
+                        <th>PArea</th>
+                        <th>Payroll Area</th>
+                        <th> PS Group </th>
+                        <th>Department</th>
+                        <th> Entry</th>
+                        <th> PSubarea</th>
+                        <th> Personnel Subarea</th>
+                        <th>Position</th>
+                        <th>Gender Key</th>
+                        <th>Birth date</th>
+                        <th> Type</th>
+                        <th> Pay scale type</th>
+                        <th> PSA</th>
+                        <th> Pay Scale Area</th>
+                        <th> Lv</th>
+                        <th> Wage Type</th>
+                        <th> Amount </th>
+                        <th> Crcy </th>
+                        <th> Number/Unit</th>
+                        <th> Total</th>
+                        <th> Crcy</th>
+                        <th> Prcnt</th>
+                        <th>Order </th>
+                        <th>Order Number </th>
+                        <th>ZLOCATION </th>
+                        <th>Section </th>
+                        <th>Work Perm </th>
+                        <th>Personnel Area </th>
+                        <th>Location </th>
+
+
+                        
+                        
+
+                      </tr>
+                      <% manningMaster.forEach(function(obj){%>
+                      <tr>
+                        <td><%= obj.PersNo %></td>
+                        <td><%= obj.PersonnelNumber  %></td>
+                          <td><%= obj.CostCtr %></td>
+                           <td><%= obj.CostCenter %></td>
+
+                            <td><%= obj.Division %></td>
+                             <td><%= obj.OrganizationalUnit %></td>
+                              <td><%= obj.PArea %></td>
+                               <td><%= obj.PayrollArea %></td>
+                                <td><%= obj.PSGroup %></td>
+                                 <td><%= obj.Department %></td>
+                                  <td><%= obj.Entry %></td>
+                                   <td><%= obj.PSubarea %></td>
+                                     <td><%= obj.PersonnelSubarea %></td>
+                                    <td><%= obj.Position %></td>
+                                   <td><%= obj.GenderKey %></td>
+                                   <td><%= obj.Type %></td>
+                                   <td><%= obj.PayScaleType %></td>
+                                   <td><%= obj.PSA %></td>
+                                  <td><%= obj.PayScaleArea %></td>
+                                  <td><%= obj.Lv %></td>
+                                  <td><%= obj.WageType %></td>
+                                 <td><%= obj.Amount %></td>
+                                   <td><%= obj.Crcy %></td>
+                                     <td><%= obj.Number %></td>
+                                      <td><%= obj.Total %></td>
+                                       <td><%= obj.Crcy %></td>
+                                        <td><%= obj.Prcnt %></td>
+                                         <td><%= obj.Order %></td>
+                                          <td><%= obj.OrderNumber %></td> 
+                                          <td><%= obj.ZLOCATION %></td>
+                                          <td><%= obj.Section %></td>
+                                           <td><%= obj.WorkPerm %></td>
+                                            <td><%= obj.PersonnelArea %></td>
+                        <td><%= obj.Location %></td> 
+                      </tr>
+                      <% }); %> 
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+function myFunction() {
+    // Declare variables 
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+</script>
+<% include ../../partials/footer %> 

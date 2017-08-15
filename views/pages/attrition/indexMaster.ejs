@@ -1,0 +1,91 @@
+  <% include ../../partials/header %> 
+
+<section class="content-header">
+    <h1> Attrition Master</h1>
+</section>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                  <div class="row">
+                    <div class=" col-md-3">
+                      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Query" class="form-control">
+                    </div>
+                    <div class="col-md-9">
+                    </div>
+                  </div>
+                </div>
+                <div class="box-body">
+                    <table id="myTable" class="table table-bordered table-striped">
+                      <tr class="header">
+
+                        <th>Pers.No.</th>
+                        <th>Personnel Number</th>
+                        <th>Resignation Month</th>
+                        <th>Gender Key</th>
+                        <th>Entry</th>
+                        <th>Tenure</th>
+                        <th>Position</th>
+                        <th> PS Group </th>
+                        <th> Tier  </th>
+                        <th> Division </th>
+                        <th> Resignation</th>
+                        <th> Resignation Reason</th>
+                        <th>New Company</th>
+                        <th>PArea</th>
+                        <th>New Employee Code </th>
+                        <th> Location </th>
+                        
+                        
+
+                      </tr>
+                      <% attritionMaster.forEach(function(obj){%>
+                      <tr>
+                        <td><%= obj.PersNo %></td>
+                        <td><%= obj.PersonnelNumber  %></td>
+                        <td><%= obj.ResignationMonth %></td>
+                        <td><%= obj.GenderKey %></td>
+                        <td><%= obj.Entry %></td>  
+                        <td><%= obj.Tenure%></td> 
+                        <td><%= obj.Position %></td> 
+                        <td><%= obj.PSGroup %></td> 
+                        <td><%= obj.Tier %></td>  
+                        <td><%= obj.Division %></td> 
+                        <td><%= obj.Resignation %></td> 
+                        <td><%= obj.ResignationReason %></td> 
+                        <td><%= obj.NewCompany %></td> 
+                        <td><%= obj.PArea %></td> 
+                        <td><%= obj.NewEmployeeCode %></td> 
+                        <td><%= obj.Location %></td> 
+                      </tr>
+                      <% }); %> 
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+function myFunction() {
+    // Declare variables 
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+
+    // Loop through all table rows, and hide those who don't match the search query
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+</script>
+<% include ../../partials/footer %> 

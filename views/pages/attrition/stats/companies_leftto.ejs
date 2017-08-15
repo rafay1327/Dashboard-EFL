@@ -1,0 +1,151 @@
+<% include ../../../partials/header %>
+
+<section class="content-header">
+	<h1> Companies Employees Left To
+
+		<a href="/attrition/indexMaster" class="pull-right   btn btn-primary">View Attrition Master</a>
+	</h1>
+</section>
+
+<!-- Main content -->
+<section class="content container">
+	<%
+	var abmauri=0, bat=0, byco=0, ebm=0, faujifoods=0, gsk=0, haideribeverages=0, hubco=0, ismailindustries=0, 
+	kpmg=0, loreal=0, png=0, pabcfaislabad=0, pepsico=0, shanfoods=0, other=0;
+
+	Companies.forEach(function(obj){
+		switch(obj.NewCompany) {
+			case 'AB MAURI':
+			abmauri++;
+			break;
+			case 'BAT':
+			bat++;
+			break;
+			case 'Byco':
+			byco++;
+			break;
+			case 'EBM':
+			ebm++;
+			break;
+			case 'Fauji Foods':
+			faujifoods++;
+			break;
+			case 'GSK':
+			gsk++;
+			break;
+			case 'Haideri Beverages':
+			haideribeverages++;
+			break;
+			case 'Hubco':
+			hubco++;
+			break;
+			case 'Ismail Industries':
+			ismailindustries++;
+			break;
+			case 'KPMG':
+			kpmg++;
+			break;
+			case 'Loreal':
+			loreal++;
+			break;
+			case 'P&G':
+			png++;
+			break;
+			case 'PABC Faislabad':
+			pabcfaislabad++;
+			break;
+			case 'PepsiCo':
+			pepsico++;
+			break;
+			case 'Shan Foods':
+			shanfoods++;
+			break;
+
+			default:
+			other++;
+		}
+	});
+
+	%>
+	<table class="table">
+		<tr class="header">
+			<th width="30%">Companies</th>
+			<th >Count</th>
+
+		</tr>
+		<tr>
+			<td>AB MAURI</td>
+			<td><%= abmauri%></td>
+
+		</tr>
+		<tr>
+			<td>BAT</td>
+			<td><%= bat %></td>
+		</tr>
+		<tr>
+			<td>BYCO</td>
+			<td><%= byco %></td>
+		</tr>
+		<tr>
+			<td>EBM</td>
+			<td><%=ebm %></td>
+		</tr>
+		<tr>
+			<td>FAUJI FOODS</td>
+			<td><%=faujifoods %></td>
+		</tr>
+		<tr>
+			<td>GSK</td>
+			<td><%=gsk %></td>
+		</tr>
+		<tr>
+			<td>HAIDERI BEVERAGES</td>
+			<td><%=haideribeverages %></td>
+		</tr>
+		<tr>
+			<td>HUBCO</td>
+			<td><%= hubco%></td>
+		</tr>
+		<tr>
+			<td>ISMAIL INDUSTRIES</td>
+			<td><%= ismailindustries%></td>
+		</tr>
+		<tr>
+			<td>KPMG</td>
+			<td><%= kpmg%></td>
+		</tr>
+		<tr>
+			<td>LOREAL</td>
+			<td><%=loreal %></td>
+		</tr>
+		<tr>
+			<td>P&G</td>
+			<td><%=png %></td>
+		</tr>
+		<tr>
+			<td>PABC FAISLABAD</td>
+			<td><%=pabcfaislabad %></td>
+		</tr>
+		
+		<tr>
+			<td>PEPSICO</td>
+			<td><%= pepsico %></td>
+		</tr>
+		<tr>
+			<td>SHAN FOODS</td>
+			<td><%= shanfoods%></td>
+		</tr>
+		<tr>
+			<td>Others</td>
+			<td><%= other%></td>
+
+		</tr>
+	</table>
+
+</section>
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.js"></script>
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.min.js"></script>
+
+<% include ../../../partials/footer %>

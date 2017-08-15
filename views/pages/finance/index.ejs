@@ -1,0 +1,131 @@
+<% include ../../partials/header %>
+    <section class="content-header">
+        <h1> Finance Vacancies
+          <a class="btn btn-primary btn-large" href="finance/new">Add</a>
+          <a href="/" class="pull-right   btn btn-primary">Back</a>
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                      <div class="row">
+                      
+                        <div class=" col-md-3">
+                          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Query" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="box-body">
+                        <table id="myTable" class="table table-bordered table-striped">
+                            <tr class="header">
+                                <th>#</th>
+                                <th>Position</th>
+                                <th>Region</th>
+                                <th>Division</th>
+                                <th>TA FP</th>
+                                <th>Tier</th>
+                                <th>Last Incumbent</th>
+                                <th>Vacant Since</th>
+                                <th>CEO Approval</th>
+                                <th>Candidates Sourced</th>
+                                <th>Candidates Tested</th>
+                                <th>Interviews</th>
+                                <th>Shortlisted</th>
+                                <th>Offer Date</th>
+                                <th>Acceptance Date</th>
+                                <th>DOJ</th>
+                                <th>Status</th>
+                                <th>Days to Hire</th>
+                                <th colspan="2" class="text-center">Actions</th>
+                            </tr>
+                            <% finance.forEach(function(obj){%>
+                                <tr>
+                                    <td>
+                                        <%=obj.s_no %>
+                                    </td>
+                                    <td>
+                                        <%= obj.position %>
+                                    </td>
+                                    <td>
+                                        <%= obj.region %>
+                                    </td>
+                                    <td>
+                                        <%= obj.division %>
+                                    </td>
+                                    <td>
+                                        <%= obj.ta_fp %>
+                                    </td>
+                                    <td>
+                                        <%= obj.tier  %>
+                                    </td>
+                                    <td>
+                                        <%= obj.last_incumbent  %>
+                                    </td>
+                                    <td>
+                                        <%= obj.vacant_since  %>
+                                    </td>
+                                    <td>
+                                        <%= obj.ceo_approval_date  %>
+                                    </td>
+                                    <td>
+                                        <%= obj.n_candidates_sourced  %>
+                                    </td>
+                                    <td>
+                                        <%= obj.n_candidates_tested  %>
+                                    </td>
+                                    <td>
+                                        <%= obj.interviews  %>
+                                    </td>
+                                    <td>
+                                        <%= obj.shortlisted  %>
+                                    </td>
+                                    <td>
+                                        <%= obj.offer_date  %>
+                                    </td>
+                                    <td>
+                                        <%= obj.acceptance_date  %>
+                                    </td>
+                                    <td>
+                                        <%= obj.doj  %>
+                                    </td>
+                                    <td>
+                                        <%= obj.status  %>
+                                    </td>
+                                    <td>
+                                        <%= obj.days_to_hire %>
+                                    </td>
+                                    <td><a class="btn btn-primary" href="finance/<%=obj._id%>">Edit</a></td>
+                                    <td><a class="btn btn-danger" href="/finance/delete/<%=obj._id%>">Delete</a></td>
+                                </tr>
+                                <% }); %>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+    function myFunction() {
+        // Declare variables 
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+    </script>
+    <% include ../../partials/footer %>

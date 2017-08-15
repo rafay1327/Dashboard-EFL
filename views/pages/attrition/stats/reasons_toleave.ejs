@@ -1,0 +1,98 @@
+<% include ../../../partials/header %>
+<!-- Content Wrapper. Contains page content -->
+<section class="content-header">
+	<h1> Reasons to Leave
+
+		<a href="/attrition/indexMaster" class="pull-right   btn btn-primary">View Attrition Master</a>
+	</h1>
+</section>
+
+<!-- Main content -->
+<section class="content container-fluid">
+
+<div style ="width: 900px; height: 500px;" >
+
+		<canvas id ="barChart" height="500" width="900" style="align-content: center;"></canvas>
+	</div>
+</section>
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.js"></script>
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.min.js"></script>
+<%
+var personal=0, relocation=0, better_opportunity_local=0, own_business=0, better_opportunity_abroad=0, education=0;
+Reasons.forEach(function(reason){
+	if(reason.ResignationReason ==="Personal Reason"){
+		personal++;
+	}
+	else if(reason.ResignationReason ==="Own Business"){
+		own_business++;
+	}
+	else if(reason.ResignationReason ==="Better Opportunity - Local"){
+		better_opportunity_local++;
+	}
+	else if(reason.ResignationReason ==="Better Opportunity - Abroad"){
+		better_opportunity_abroad++;
+	}
+	else if(reason.ResignationReason ==="Relocation"){
+		relocation++;
+	}
+	else if(reason.ResignationReason ==="Higher Education"){
+		education++;
+	}
+
+
+});
+
+
+
+%>
+<!-- <%= personal %>
+<%= better_opportunity_local %>
+<%= better_opportunity_abroad %>
+<%= relocation%>
+<%= own_business%>
+<%= education%> -->
+<script type="text/javascript">
+
+
+	const CHART = document.getElementById("barChart");
+	let barChart = new Chart(CHART, {
+		type : 'bar',
+		data: {
+			labels: ["Personal Reaons", "Own Business" , "Better Opportunity - Local", "Better Opportunity - Abroad", "Relocation", "Higher Education" ],
+
+			datasets: [{
+				label: 'Number of people leaving due to Reason X',
+				data: [<%= personal %>,  <%= own_business%>,  <%= better_opportunity_local %>,  <%= better_opportunity_abroad %>, <%= relocation%>,  <%= education%>],
+				backgroundColor: [
+				'rgba(46,139,87,1)',
+				'rgb(46,139,87)',
+				'rgb(46,139,87)',
+				'rgb(46,139,87)',
+				'rgb(46,139,87)',
+				'rgb(46,139,87)',
+
+
+				],
+				borderColor: [
+				'rgb(46,139,87)',
+				'rgba(54, 162, 235, 1)'
+				],
+				borderWidth: 1
+			}]
+		},
+		options : {
+			scales: {
+				yAxes:  [{
+					ticks: {
+						beginAtZero: true
+					}
+				}]
+			}
+		}
+	});
+	console.log(CHART);
+
+</script>
+<% include ../../../partials/footer %>

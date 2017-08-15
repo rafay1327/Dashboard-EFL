@@ -1,0 +1,177 @@
+<% include ../../partials/header %>
+<style type="text/css">
+  #dougnutChart{
+   -webkit-flex-wrap: wrap;
+   flex-wrap: wrap;
+   -webkit-align-content: center;
+   align-content: center;
+ }
+</style>
+<!-- Content Wrapper. Contains page content -->
+<section class="content-header">
+ <h1> Transfers Statistics
+
+  <a href="/transfers" class="pull-right   btn btn-primary">View Transfers</a>
+</h1>
+<div class="container">
+
+
+  <%
+  var appointment=0,transfer=0;
+  var total=0, a_ratio=0,t_ratio=0;
+  transfers_all.forEach(function(obj){
+    if(obj.status==="Appointment"){
+      appointment++;
+      total++;
+    }
+    else{
+      transfer++;
+      total++;
+    }
+
+  });
+  a_ratio = appointment*100/total;
+  t_ratio = transfer*100/total;
+
+  %>
+  <div class="pull-right box-body" style="border:1px solid; margin-top:15px">Key:
+    <br>
+    Appointed: <strong><%= Math.round(a_ratio)%>%</strong>
+    <br>
+    Transfered: <strong><%= Math.round(t_ratio)%>%</strong>
+    <br>
+    Total: <strong ><%= total %></strong>
+  </div>
+
+</section>
+
+<!-- Main content -->
+<section class="content container-fluid">
+  <div class="box-body col-md-5">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th></th>
+          <th>In</th>
+          <th>Out</th>
+          <th>Remaining</th>
+        </tr>
+      </thead>
+      <tbody >
+        <tr>
+          <td><strong>Agri Business</strong></td>
+          <td><%= n_agri %></td>
+          <td><%= o_agri %></td>
+          <td><%= n_agri - o_agri %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Dairy Sales</strong></td>
+          <td><%=n_dairy%></td>
+          <td><%=o_dairy %></td>
+          <td><%= n_dairy - o_dairy %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Finance and Strategic Business</strong></td>
+          <td><%= n_finance %></td>
+          <td><%= o_finance%></td>
+          
+          <td><%= n_finance - o_finance %></td>
+        </tr>
+
+        <tr>
+          <td><strong>General Management</strong></td>
+          <td><%= n_generalmgmt %></td>
+          <td><%= o_generalmgmt %></td>
+          <td><%= n_generalmgmt - o_generalmgmt %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Human Resources and Admin</strong></td>
+          <td><%= n_hr_admin%></td>
+          <td><%= o_hr_admin %></td>
+          <td><%= n_hr_admin - o_hr_admin %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Ice Cream</strong></td>
+          <td><%= n_icecream %></td>
+          <td><%= o_icecream %></td>
+          
+          <td><%= n_icecream - o_icecream %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Internal Audit</strong></td>
+          <td><%= n_audit %></td>
+          <td><%= o_audit %></td>
+
+          <td><%= n_audit - o_audit %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Technical Operations</strong></td>
+          <td><%= n_tech_op %></td>
+          <td><%= o_tech_op %></td>
+          
+          <td><%= n_tech_op - o_tech_op %></td>
+        </tr>
+
+        <tr>
+          <td><strong>Marketing Dairy & Beverages</strong></td>
+          <td><%= n_marketing%></td>
+          <td><%= o_marketing %></td>
+
+          <td><%= n_marketing - o_marketing %></td>
+        </tr>
+
+
+      </tbody>
+    </table>
+
+  </div>
+  <div class="col-md-5">
+    <canvas id ="doughnutChart" height="400" width="400"></canvas>
+
+  </section>
+</div>
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.js"></script>
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.min.js"></script>
+
+<script type="text/javascript">
+
+
+  const CHART = document.getElementById("doughnutChart");
+  let doughnutChart = new Chart(CHART, {
+    type : 'doughnut',
+    data: {
+      labels: ["Appointment", "Transfer"],
+
+      datasets: [{
+        label: 'Comparison of Employee Status : Appointment/Transfer ',
+        data: [<%= appointment %>, <%= transfer %>],
+        backgroundColor: [
+        'rgba(255, 159, 64, 1)',
+        'rgb(244, 69, 66  )',
+        'rgba(255, 255, 86, 0.2)'
+
+        ],
+        borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options : {
+
+    }
+  });
+
+
+</script>
+
+<% include ../../partials/footer %>

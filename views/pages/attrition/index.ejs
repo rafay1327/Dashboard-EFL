@@ -1,0 +1,244 @@
+<% include ../../partials/header %>
+    <section class="content-header">
+        <h1> Attrition
+      <a class="btn btn-primary btn-large" href="attrition/indexMaster">Master Table</a>
+    </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <div class="row">
+                            <div class=" col-md-3">
+                                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Query" class="form-control">
+                            </div>
+                            <div class="col-md-9">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <form>
+                            <table id="myTable" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr role="row" class="header">
+                                        <th>Employee Categories</th>
+                                        <th>
+                                            <label for="month">Month</label>
+                                            <select id="select1" class="target" name="select1">
+                                                <option value="01">January</option>
+                                                <option value="02">February</option>
+                                                <option value="03">March</option>
+                                                <option value="04">April</option>
+                                                <option value="05">May</option>
+                                                <option value="06">June</option>
+                                                <option value="07">July</option>
+                                                <option value="08">August</option>
+                                                <option value="09">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">Novemeber</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                        </th>
+                                        <th>
+                                            <label for="month">Month</label>
+                                            <select id="select2" name="select2">
+                                                <option value="01">January</option>
+                                                <option value="02">February</option>
+                                                <option value="03">March</option>
+                                                <option value="04">April</option>
+                                                <option value="05">May</option>
+                                                <option value="06">June</option>
+                                                <option value="07">July</option>
+                                                <option value="08">August</option>
+                                                <option value="09">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">Novemeber</option>
+                                                <option value="12">December</option>
+                                            </select>
+                                        </th>
+                                        <th>Average</th>
+                                        <th>Left</th>
+                                        <th>Percentage</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="attrition_table">
+                                    <tr role="row">
+                                        <td>CL 12 - 19 and Associates</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr role="row">
+                                        <td>CL 20 - 27</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr role="row">
+                                        <td>CL 20 - 24</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr role="row">
+                                        <td>CL 28 - 29 </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr role="row">
+                                        <td><b>Total</b></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+    var data = <%- JSON.stringify(attritionMaster) %>
+    var tiers = ["CL 12 - 19", "CL 20 - 24", "CL 20 - 27", "CL 28 - 29"]
+    var monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    function getTierData(month, tier) {
+        // requires tier to have the same string as stored in the DB
+        // need to find a better way to check this, maybe by using Tier Numbers
+        var tierData = month.filter(function(object) {
+            return object.Tier.toLowerCase().indexOf(tier.toLowerCase()) !== -1
+        })
+        // console.log(month, tier)
+        return tierData.length;
+    }
+
+    function getMonthData(data, month) {
+        return data.filter(function(object) {
+            return object.Entry.split(".")[0] == month
+        });
+    }
+
+    function sum(list) {
+        return list.reduce((a, b) => a + b);
+    }
+
+    function getMonth(m) {
+        // console.log(m)
+        var t = new Date(2000, m - 1, 1);
+        // console.log(t)
+        return monthNames[t.getMonth()]
+    }
+
+    function getResignationData(data, month, tier) {
+        return data.filter(function(object) {
+            return object.ResignationMonth.toLowerCase().indexOf(month.toLowerCase().substr(0, 3)) === 0 && object.Tier.toLowerCase().indexOf(tier.toLowerCase()) !== -1
+        }).length
+    }
+
+    $('form select').on('change', function() {
+        var month = $('#select1').val();
+        var month2 = $('#select2').val();
+
+
+        // console.log(month, month2);
+        // console.log(data.length);
+
+        var m1 = getMonthData(data, month);
+        var m2 = getMonthData(data, month2);
+
+        // console.log("m1", m1)
+        // console.log("m2", m2)
+
+        var tierm1 = []
+        var tierm2 = []
+        var rList = []
+        var rm1 = Math.max(month, month2)
+        var rm2 = Math.min(month, month2)
+
+        var rm = rm2;
+
+        tiers.forEach(function(tier) {
+          var tList = []
+          tierm1.push(getTierData(m1, tier))
+          tierm2.push(getTierData(m2, tier))
+          
+          while (rm1 >= rm) {
+            tList.push(getResignationData(data, getMonth(rm), tier))
+            // console.log(tList)
+            rm++;
+          }
+          rList.push(sum(tList))
+          rm = rm2;
+        })
+
+        // console.log(tierm1, tierm2)
+        // console.log(rList)
+        // var left = sum(rList);
+
+        // console.log(left)
+
+        var atable = []
+        tiers.forEach(function(tier, counter) {
+            var temp = "<tr role='row'>" +
+                "<td><b> " + tier + " </b></td>" +
+                "<td>" + tierm1[counter] + "</td>" +
+                "<td>" + tierm2[counter] + "</td>" +
+                "<td>" + ((tierm1[counter] + tierm2[counter]) / 2) + "</td>" +
+                "<td>" + rList[counter] + "</td>" +
+                "<td>" + "" + "</td>" +
+                "</tr>";
+            atable.push(temp);
+        });
+        var totalRow = "<tr role='row'>" +
+            "<td><b>Total</b></td>" +
+            "<td>" + sum(tierm1) + "</td>" +
+            "<td>" + sum(tierm2) + "</td>" +
+            "<td>" + ((sum(tierm1) + sum(tierm2)) / 2) + "</td>" +
+            "<td>" + sum(rList) + "</td>" +
+            "<td>" + "" + "</td>" +
+            "</tr>";
+        atable.push(totalRow)
+
+        $(".attrition_table").html(atable.join(""));
+
+    });
+
+    </script>
+<% include ../../partials/footer %>

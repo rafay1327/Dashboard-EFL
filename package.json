@@ -1,0 +1,36 @@
+{
+  "name": "dashbaord",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "angular": "^1.6.5",
+    "body-parser": "^1.17.2",
+    "chart.js": "^2.6.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "diskdb": "^0.1.17",
+    "ejs": "^2.5.6",
+    "express": "~4.15.2",
+    "express-method-override": "0.0.3",
+    "flash": "^1.1.0",
+    "html-pdf": "^2.1.0",
+    "moment": "^2.18.1",
+    "mongoose": "^4.10.5",
+    "mongoose-auto-increment": "^5.0.1",
+    "morgan": "~1.8.1",
+    "multer": "^1.3.0",
+    "ng-file-upload": "^12.2.13",
+    "pretty-easy-dates": "^1.0.1",
+    "req-flash": "0.0.3",
+    "sequelize": "^4.1.0",
+    "serve-favicon": "~2.4.2",
+    "tableexport": "^4.0.11",
+    "webpack": "^2.6.1",
+    "xls-to-json-lc": "^0.3.4",
+    "xlsx-to-json-lc": "^0.4.1"
+  }
+}
