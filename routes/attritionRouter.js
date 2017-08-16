@@ -65,7 +65,7 @@
 
     attritionRouter.get('/manningMaster', function(req, res, next) {
 
-        var object = db.attrition.find({});
+        var object = db.manningMaster.find({});
         res.render('pages/attrition/manningMaster', { manningMaster: object });
     });
 
@@ -79,9 +79,36 @@
 
         res.render('pages/attrition/stats/reasons_toleave', { Reasons : Reasons });
     });
+
     attritionRouter.get('/stats/age_attrition', function(req, res, next){
-     
-       res.render('pages/attrition/stats/age_attrition');
+ 
+        var manning  = db.manningMaster.find({});
+        var age_20to35=0,age_35above=0,count=0;
+        manning.forEach(function(obj){
+            var birthday = obj.BirthDate;
+            var formattedbd= moment(birthday, 'DD.MM.YYYY');
+            var now = moment();
+            var formattednow = moment(now, 'DD.MM.YYYY');
+            var duration = moment.duration(formattednow.diff(formattedbd));
+            var age = duration.asYears();
+            console.log(age);
+
+          if(age >=20 && age < 35){
+            age_20to35++;   
+          }
+          else if(age >= 35){
+            age_35above++;
+          }
+          count++;
+        });
+        
+        age_35above= age_35above*100/count;
+        age_20to35 = age_20to35*100/count;
+        console.log(age_20to35);
+        console.log(age_35above);  
+        console.log(count);
+
+       res.render('pages/attrition/stats/age_attrition', { age_20to35 :age_20to35 , age_35above: age_35above });
    });
     attritionRouter.get('/stats/gender_attrition', function(req, res, next){
         var object = db.attritionMaster.find({});

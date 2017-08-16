@@ -1,17 +1,19 @@
 <% include ../../../partials/header %>
 
 <section class="content-header">
-	<h1> Age-Wise Attrition
+	<h1> Age-Wise Attrition 
+
 
 		<a href="/attrition" class="pull-right   btn btn-primary">View Attrition</a>
 	</h1>
+	<h4>Percentage of employees resigned belonging to age 20-35 and 35 above</h4>
 </section>
 
 <!-- Main content -->
 <section class="content container-fluid">
 	<div style ="width: 900px; height: 500px;">
 
-		<canvas id ="lineChart" height="500" width="900"></canvas>
+		<canvas id ="barChart" height="500" width="900"></canvas>
 	</div> 
 
 </section>
@@ -24,19 +26,19 @@
 <script type="text/javascript">
 
 
-	const CHART = document.getElementById("lineChart");
-	let lineChart = new Chart(CHART, {
-		type : 'line',
+	const CHART = document.getElementById("barChart");
+	let barChart = new Chart(CHART, {
+		type : 'bar',
 		data: {
-			labels: ["Q1", "Q2",  "Q3", "Q4", "Q5", "Q6"],
+			labels: ["20-35" , "35 and Above"],
 
 			datasets: [{
-				label: 'Comparison between Transfers (Cleared/Not Cleared) ',
-				data: [<%= 1 %>, <%= 12 %> ],
+				label: 'Comparison between ages of resigned Employees (%)',
+				data: [<%= age_20to35  %>, <%= age_35above  %> ],
 				backgroundColor: [
 				'rgba(255, 159, 64, 1)',
 				'rgb(244, 69, 66  )',
-				'rgba(255, 255, 86, 0.2)'
+			
 
 				],
 				borderColor: [
