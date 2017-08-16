@@ -64,7 +64,8 @@
     });
 
     attritionRouter.get('/manningMaster', function(req, res, next) {
-        var object = db.manningMaster.find({});
+
+        var object = db.attrition.find({});
         res.render('pages/attrition/manningMaster', { manningMaster: object });
     });
 
@@ -78,13 +79,14 @@
 
         res.render('pages/attrition/stats/reasons_toleave', { Reasons : Reasons });
     });
-    attritionRouter.get('/stats/attrition_sixquarters', function(req, res, next){
+    attritionRouter.get('/stats/age_attrition', function(req, res, next){
      
-       res.render('pages/attrition/stats/attrition_sixquarters');
+       res.render('pages/attrition/stats/age_attrition');
    });
     attritionRouter.get('/stats/gender_attrition', function(req, res, next){
-     
-       res.render('pages/attrition/stats/gender_attrition');
+        var object = db.attritionMaster.find({});
+
+       res.render('pages/attrition/stats/gender_attrition', {attritionMaster : object });
    });
     // EDITED
 
