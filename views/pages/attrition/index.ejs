@@ -222,7 +222,7 @@
                 "<td>" + tierm2[counter] + "</td>" +
                 "<td>" + ((tierm1[counter] + tierm2[counter]) / 2) + "</td>" +
                 "<td>" + rList[counter] + "</td>" +
-                "<td>" + "" + "</td>" +
+                "<td>" + ((rList[counter] /((tierm1[counter] + tierm2[counter]) / 2))*100) + "</td>" +
                 "</tr>";
             atable.push(temp);
         });
@@ -232,7 +232,7 @@
             "<td>" + sum(tierm2) + "</td>" +
             "<td>" + ((sum(tierm1) + sum(tierm2)) / 2) + "</td>" +
             "<td>" + sum(rList) + "</td>" +
-            "<td>" + "" + "</td>" +
+            "<td>" + ((sum(rList)/((sum(tierm1) + sum(tierm2)) / 2))*100) + "</td>" +
             "</tr>";
         atable.push(totalRow)
 
