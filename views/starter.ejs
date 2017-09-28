@@ -1,39 +1,30 @@
-
 <% include partials/header %>
 
-<!-- Content Wrapper. Contains page content -->
-<section class="content-header">
-  <h1>
-    Dashboard Contents
-    <small>Show graphs for Attrition here</small>
+  <section class="content-header">
+    <h1>Dashboard</h1>
+  </section>
 
-  </h1>
-
-</section>
-
-<!-- Main content -->
-<section class="content container-fluid">
-  <div class"row">
-    <div class="col-md-12">
-      <a href="transfers/stats" class="btn btn-primary">View Transfers Statistics </a>
-      <a href="pli/stats" class="btn btn-primary">View PLI Statistics</a>
-      <a href="attrition/upload" class="btn btn-primary">Upload Attrition</a>
-      <a href="attrition/uploadm" class="btn btn-primary">Upload Manning</a>
-      <a href="attrition/indexMaster" class="btn btn-primary">AttritionMaster</a>
-      <a href="attrition/manningMaster" class="btn btn-primary">ManningMaster</a>
-    </div>
-
-    <div class="col-md-12" style="margin-top:5px">
-      <p> Attrition Graphs</p>
-      <a href="attrition/stats/companies_leftto" class="btn btn-primary">Companies left to</a>
-      <a href="attrition/stats/reasons_toleave" class="btn btn-primary">Reasons to leave</a>
-      <a href="attrition/stats/age_attrition" class="btn btn-primary">Age wise Attrition</a>
-      <a href="attrition/stats/gender_attrition" class="btn btn-primary">Gender Wise Attrition</a>
-    </div>
-
-
-  </div>
-</section>
-
-
+  <section class="content">
+      <div class="row">
+          <div class="col-md-12">
+              <a href="transfers/stats" class="btn btn-primary">View Transfers Statistics </a>
+              <a href="pli/stats" class="btn btn-primary">View PLI Statistics</a>
+              <a href="attrition/upload" class="btn btn-primary">Upload Attrition</a>
+              <a href="attrition/uploadm" class="btn btn-primary">Upload Manning</a>
+              <a href="attrition/indexMaster" class="btn btn-primary">AttritionMaster</a>
+              <a href="attrition/manningMaster" class="btn btn-primary">ManningMaster</a>
+          </div>
+          <!-- /.col -->
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <h5>Attrition Graphs</h5>
+              <a href="attrition/stats/companies_leftto" class="btn btn-primary">Companies left to</a>
+              <a href="attrition/stats/reasons_toleave" class="btn btn-primary">Reasons to leave</a>
+              <a href="attrition/stats/age_attrition" class="btn btn-primary">Age wise Attrition</a>
+              <a href="attrition/stats/gender_attrition" class="btn btn-primary">Gender Wise Attrition</a>
+        </div>
+      </div>
+      <!-- /.row -->
+  </section>
 <% include partials/footer %>

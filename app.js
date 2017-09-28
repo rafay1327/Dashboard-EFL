@@ -1,19 +1,18 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var multer = require('multer');
-var xlstojson = require("xls-to-json-lc");
-var xlsxtojson = require("xlsx-to-json-lc");
+var path          = require('path');
+var multer        = require('multer');
+var logger        = require('morgan');
+var express       = require('express');
+var bodyParser    = require('body-parser');
+var cookieParser  = require('cookie-parser');
+var favicon       = require('serve-favicon');
+var xlstojson     = require("xls-to-json-lc");
+var xlsxtojson    = require("xlsx-to-json-lc");
 
 
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 
 // routes
 var index = require('./routes/index');
-
 var dvRouter = require('./routes/dvRouter');
 var transfersRouter= require('./routes/transfersRouter');
 var attritionRouter= require('./routes/attritionRouter');
@@ -25,10 +24,6 @@ var finRouter = require('./routes/finRouter');
 var hrRouter = require('./routes/hrRouter');
 var auditRouter = require('./routes/auditRouter');
 var icRouter =  require('./routes/icRouter');
-var multer = require('multer');
-    var xlstojson = require("xls-to-json-lc");
-    var xlsxtojson = require("xlsx-to-json-lc");
-
 
 
 var app = express();
