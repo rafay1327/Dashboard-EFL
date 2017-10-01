@@ -16,54 +16,55 @@
 <!-- ./wrapper -->
 <!-- REQUIRED JS SCRIPTS -->
 <script>
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() { scrollFunction() };
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("myBtn").style.display = "block";
-    } else {
-        document.getElementById("myBtn").style.display = "none";
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
     }
-}
 
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
 </script>
 <!-- bootstrap datepicker -->
 <script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
 <!-- DataTables -->
 <!-- jQuery 3.1.1 -->
 <!-- Bootstrap 3.3.7 -->
-<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.js"></script>
-<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.js"></script>
+<!-- <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.js"></script> -->
+<!-- <script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/bootstrap/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script> -->
 <script src="/plugins/jQuery/jquery-3.1.1.min.js"></script>
 <!-- bootstrap datepicker -->
-<script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
+<!-- <script src="/plugins/datepicker/bootstrap-datepicker.js"></script> -->
 <!-- DataTables -->
 <!-- jQuery 3.1.1 -->
 <!-- Bootstrap 3.3.7 -->
 <!-- AdminLTE App -->
 <script src="/dist/js/adminlte.min.js"></script>
-<script type="text/javascript">
-</script>
+<!-- <script src="/plugins/jQuery/jquery-3.1.1.min.js"></script> -->
+<!-- <script src="/bootstrap/js/bootstrap.min.js"></script> -->
+
 <!-- TableExport -->
-<script src="/plugins/jQuery/jquery-3.1.1.min.js"></script>
-<script src="/bootstrap/js/bootstrap.min.js"></script>
 <script src="FileSaver/FileSaver.js"></script>
 <script src="tableexport/dist/js/tableexport.js"></script>
 <script>
-$("table").tableExport({
-    bootstrap: true
-});
+    $("table").tableExport({
+        bootstrap: true
+    });
+
 </script>
 </body>
 
