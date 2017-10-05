@@ -1,0 +1,4 @@
+new changes:
+-female only attrition (same as attrition)
+-graph of attrition wise resignation count (ppt slide 10)
+-approve vs actual population using cl number filter search (similar to excel pivot table)

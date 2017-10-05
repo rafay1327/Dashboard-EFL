@@ -1,7 +1,7 @@
 <% include ../../partials/header %>
     <section class="content-header">
         <h1> Attrition
-      <a class="btn btn-primary btn-large" href="attrition/indexMaster">Master Table</a>
+      <a class="btn btn-primary btn-large" href="/attrition/master">Master Table</a>
     </h1>
     </section>
     <section class="content">
@@ -24,8 +24,9 @@
                                     <tr role="row" class="header">
                                         <th>Employee Categories</th>
                                         <th>
-                                            <label for="month">Month</label>
-                                            <select id="select1" class="target" name="select1">
+                                            <!-- <label for="month">Month</label> -->
+                                            <select id="select1" class="form-control" name="select1">
+                                                <option disabled selected>Choose Month</option>
                                                 <option value="01">January</option>
                                                 <option value="02">February</option>
                                                 <option value="03">March</option>
@@ -41,8 +42,9 @@
                                             </select>
                                         </th>
                                         <th>
-                                            <label for="month">Month</label>
-                                            <select id="select2" name="select2">
+                                            <!-- <label for="month">Month</label> -->
+                                            <select id="select2" class="form-control" name="select2">
+                                                <option disabled selected>Choose Month</option>
                                                 <option value="01">January</option>
                                                 <option value="02">February</option>
                                                 <option value="03">March</option>
@@ -199,6 +201,8 @@
           tierm1.push(getTierData(m1, tier))
           tierm2.push(getTierData(m2, tier))
           
+          console.log(tierm1)
+
           while (rm1 >= rm) {
             tList.push(getResignationData(data, getMonth(rm), tier))
             // console.log(tList)
