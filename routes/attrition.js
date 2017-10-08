@@ -69,6 +69,51 @@ router.get('/stats/age_attrition', function (req, res, next) {
   res.render('pages/attrition/stats/age_attrition', { age_20to35: age_20to35, age_35above: age_35above });
 });
 
+//division wise attrition
+router.get('/stats/division_attrition', function (req, res, next) {
+
+  var result = db.attritionMaster.find({});
+  var dairy=0,tech=0,fin=0,mkt=0,icecream=0,iaudit=0,agri=0,other=0;
+  var division=null;
+   result.forEach(function (obj) {
+    switch (obj.Division) {
+    case  'Dairy Sales':
+    dairy++;
+    break;
+    case 'Agri Business':
+    agri++;
+    break;
+    case 'Ice Cream':
+    icecream++;
+    break;
+    case 'Finance & Strategic Business':
+    fin++;
+    break;
+    case 'Internal Audit':
+    iaudit++;
+    break;
+    case 'Marketing Dairy & Beverages':
+    mkt++;
+    break;
+    case 'Technical Operations':
+    tech++;
+    break;
+    default:
+    other++;
+    }
+    
+    
+    });
+    console.log(agri);
+    console.log(dairy);
+    console.log(other);
+
+ 
+  res.render('pages/attrition/stats/division_attrition', { dairy:dairy, tech:tech, fin:fin, mkt:mkt, icecream:icecream, iaudit:iaudit,
+  agri:agri, other:other });
+});
+
+
 router.get('/stats/gender_attrition', function (req, res, next) {
   var object = db.attritionMaster.find({});
 

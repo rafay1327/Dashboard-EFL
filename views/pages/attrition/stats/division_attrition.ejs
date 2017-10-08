@@ -1,0 +1,74 @@
+<% include ../../../partials/header %>
+<section class="content-header">
+ <h1> Division Wise Attrition
+
+  <a href="/attrition" class="pull-right   btn btn-primary">Attrition</a>
+</h1>
+</section>
+
+<!-- Main content -->
+<section class="content container-fluid">
+  <div style ="width: 900px; height: 500px;">
+
+    <canvas id ="barChart" height="500" width="900"></canvas>
+  </div> 
+
+</section>
+
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.js"></script>
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.min.js"></script>
+
+
+<%
+
+console.log(agri);
+%>
+
+<script type="text/javascript">
+
+
+  const CHART = document.getElementById("barChart");
+  let barChart = new Chart(CHART, {
+    type : 'bar',
+    data: {
+      labels: ["Dairy Sales", "Technical Operations","Finance & Strategic Business","Marketing Dairy & Beverages", "Ice Cream", "Internal Audit", "Agri Business", "Other"],
+
+      datasets: [{
+        label: 'Comparison between resignations from different Divisions ',
+        data: [  <%=dairy%>,<%=tech%>,<%=fin%>,<%=mkt%>,<%=icecream%>,<%=iaudit%>,<%=agri%>,<%=other%> ],
+        backgroundColor: [
+        'rgba(46,139,87,1)',
+        'rgba(46,139,87,1)',
+        'rgba(46,139,87,1)',
+        'rgba(46,139,87,1)',
+        'rgba(46,139,87,1)',
+        'rgba(46,139,87,1)',
+        'rgba(46,139,87,1)',
+        'rgba(46,139,87,1)'
+
+        ],
+        borderColor: [
+        'rgb(46,139,87)',
+        'rgba(54, 162, 235, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options : {
+      scales: {
+        yAxes:  [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+  console.log(CHART);
+
+</script>
+
+
+<% include ../../../partials/footer %>
