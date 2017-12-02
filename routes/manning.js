@@ -6,7 +6,7 @@ var moment = require('moment');
 var multer = require('multer');
 var xlstojson = require("xls-to-json-lc");
 var xlsxtojson = require("xlsx-to-json-lc");
-var utils = require("../utils.js");
+var utils = require("../utils");
 
 router.get('/upload', function (req, res, next) {
   res.render('pages/manning/upload');
@@ -18,6 +18,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/upload', function(req, res, next) {
+  var exceltojson;
   utils.upload(req, res, function(err) {
     if (err) {
       res.json({error_code: 1, err_desc: err});
@@ -37,13 +38,19 @@ router.post('/upload', function(req, res, next) {
     try {
       exceltojson({
         input: req.file.path,
+        // output: null
         output: "db/manningMaster.json",
         //lowerCaseHeaders:true
       }, function(err, result) {
         if (err) {
           return res.json({ error_code: 1, err_desc: err, data: null });
         }
-        res.json({ error_code: 0, err_desc: null, data: result });
+
+        // db.manningMaster.save(result);
+
+        res.redirect('/manning');
+
+        // res.json({ error_code: 0, err_desc: null, data: result });
       });
     } catch (e) {
       res.json({ error_code: 1, err_desc: "Corrupted excel file" });

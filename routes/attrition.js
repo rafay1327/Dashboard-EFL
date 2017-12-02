@@ -99,15 +99,15 @@ router.route('/upload')
       try {
         exceltojson({
           input: req.file.path,
-          output: null
-          // output: "db/attritionMaster.json",
+          // output: null
+          output: "db/attritionMaster.json",
           //lowerCaseHeaders:true
         }, function (err, result) {
           if (err) {
             return res.json({ error_code: 1, err_desc: err, data: null });
           }
 
-          db.attritionMaster.save(result);
+          // db.attritionMaster.save(result);
 
           var object = db.attritionMaster.find({});
           res.render('pages/attrition/indexMaster', { attritionMaster: object });
