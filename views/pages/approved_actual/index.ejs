@@ -1,0 +1,361 @@
+<% include ../../partials/header %>
+    <section class="content-header">
+        <h1> Approved VS Actual 
+        <a href="/approved_actual/create" class="btn btn-primary">Add New Approved</a>
+        <!-- <a href="/approved_actual/create/actual" class="btn btn-primary">Add New Actual</a> -->
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-md-3 page-header">
+                <p>Select Year</p>
+                <select class="form-control" id="year_select">
+                    <option selected value=""></option>
+                    <% approved.forEach(function(obj){%>
+                        <option value="<%= obj.year %>"><%= obj.year %></option>
+                    <% }); %>
+              </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 ">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Approved Number</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                            <div class="row">
+                                <div class="col-sm-6"></div>
+                                <div class="col-sm-6"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+                                        <thead>
+                                            <tr role="row">
+                                                <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending">Division</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">NMPTS (Associates)</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tier V (CL 12-17)</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tier IV (CL 18-19)</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tier III (CL 20-27)</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tier II (CL 28-29)</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Tier I (CL 30 & above)</th>
+                                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="approved_table">
+                                            <tr role="row">
+                                                <td><b>Marketing</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr role="row">
+                                                <td><b>Dairy Sales</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr role="row">
+                                                <td><b>Technical Operation</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr role="row">
+                                                <td><b>Finance & SBD</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr role="row">
+                                                <td><b>HR & Admin</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            
+                                            </tr>
+                                            <tr role="row">
+                                                <td><b>Ice Cream</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            
+                                            </tr>
+                                            <tr role="row">
+                                                <td><b>Audit</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            
+                                            </tr>
+                                            <tr role="row">
+                                                <td><b>General Management</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            
+                                            </tr>
+                                            <tr role="row">
+                                                <td><b>Legal</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            
+                                            </tr>
+                                            <tr role="row">
+                                                <td><b>Total</b></td>
+                                                <td><b></b></td>
+                                                <td><b></b></td>
+                                                <td><b></b></td>
+                                                <td><b></b></td>
+                                                <td><b></b></td>
+                                                <td><b></b></td>
+                                                <td><b></b></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="box">
+                    <div class="box-header">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <h3 class="box-title">Actual Values</h3>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <!-- <label>Select Month</label> -->
+                                    <!-- <select class="form-control" id="month_select">
+                                        <option selected disabled>Select Month</option>
+                                        <option value="march">March</option>
+                                        <option value="april">April</option>
+                                    </select> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div id="pivotOutput"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <% include ../../partials/footer %>
+
+<script type="text/javascript">
+    var setData = function (data, division) {
+        var temp = "<tr role='row'>" +
+                        "<td><b>" + division + "</b></td>" +
+                        "<td>" + data.nmpts + "</td>" +
+                        "<td>" + data.tierv + "</td>" +
+                        "<td>" + data.tieriv + "</td>" +
+                        "<td>" + data.tieriii + "</td>" +
+                        "<td>" + data.tierii + "</td>" +
+                        "<td>" + data.tieri + "</td>" +
+                        // "<td>" + sum(data.nmpts + data.tierv + data.tieriv + data.tieriii + data.tierii + data.tieri) + "</td>" +
+                        "<td>" + sumrow(data) + "</td>" +
+                    "</tr>";
+
+        return temp;
+    }
+
+    var sumrow = function ( obj ) {
+      return Object.keys( obj )
+                   .reduce( function( sum, key ){
+                        return sum + parseInt( obj[key] );
+                   }, 0 );
+    }
+
+    var sumcol = function (obj, i) {
+        // console.log(obj)
+        delete obj.year;
+        delete obj._id;
+        // console.log(obj)
+        var k = Object.keys(obj.marketing);
+        // console.log(k)
+        var result = 0;
+        for (var key in obj) {
+            // console.log(key)
+            // console.log(obj[key][k[i]]);
+            result += parseInt(obj[key][k[i]]);
+        };
+
+        return result
+    }
+
+
+    var calculateTotal = function (data) {
+        var temp = "<tr role='row'>" +
+                        "<td><b>Total</b></td>" +
+                        "<td><b>" + sumcol(data, 0) + "</b></td>" +
+                        "<td><b>" + sumcol(data, 1) + "</b></td>" +
+                        "<td><b>" + sumcol(data, 2) + "</b></td>" +
+                        "<td><b>" + sumcol(data, 3) + "</b></td>" +
+                        "<td><b>" + sumcol(data, 4) + "</b></td>" +
+                        "<td><b>" + sumcol(data, 5) + "</b></td>" +
+                        // "<td><b>" + (data.marketing.nmpts + data.dairy_sales.nmpts + data.technical_operation.nmpts  + data.finance_sbd.nmpts  + data.hr_admin.nmpts  + data.ice_cream.nmpts  + data.audit.nmpts  + data.general_management.nmpts  + data.legal.nmpts) + "</b></td>" +
+                        // "<td><b>" + (data.marketing.tierv + data.dairy_sales.tierv + data.technical_operation.tierv  + data.finance_sbd.tierv  + data.hr_admin.tierv  + data.ice_cream.tierv  + data.audit.tierv  + data.general_management.tierv  + data.legal.tierv) + "</b></td>" +
+                        // "<td><b>" + (data.marketing.tieriv + data.dairy_sales.tieriv + data.technical_operation.tieriv  + data.finance_sbd.tieriv  + data.hr_admin.tieriv  + data.ice_cream.tieriv  + data.audit.tieriv  + data.general_management.tieriv  + data.legal.tieriv) + "</b></td>" +
+                        // "<td><b>" + (data.marketing.tieriii + data.dairy_sales.tieriii + data.technical_operation.tieriii  + data.finance_sbd.tieriii  + data.hr_admin.tieriii  + data.ice_cream.tieriii  + data.audit.tieriii  + data.general_management.tieriii  + data.legal.tieriii) + "</b></td>" +
+                        // "<td><b>" + (data.marketing.tierii + data.dairy_sales.tierii + data.technical_operation.tierii  + data.finance_sbd.tierii  + data.hr_admin.tierii  + data.ice_cream.tierii  + data.audit.tierii  + data.general_management.tierii  + data.legal.tierii) + "</b></td>" +
+                        // "<td><b>" + (data.marketing.tieri + data.dairy_sales.tieri + data.technical_operation.tieri  + data.finance_sbd.tieri  + data.hr_admin.tieri  + data.ice_cream.tieri  + data.audit.tieri  + data.general_management.tieri  + data.legal.tieri) + "</b></td>" +
+                        // "<td><b>" + (data.marketing.nmpts + data.dairy_sales.nmpts + data.technical_operation.nmpts  + data.finance_sbd.nmpts  + data.hr_admin.nmpts  + data.ice_cream.nmpts  + data.audit.nmpts  + data.general_management.nmpts  + data.legal.nmpts + data.marketing.tierv + data.dairy_sales.tierv + data.technical_operation.tierv  + data.finance_sbd.tierv  + data.hr_admin.tierv  + data.ice_cream.tierv  + data.audit.tierv  + data.general_management.tierv  + data.legal.tierv + data.marketing.tieriv + data.dairy_sales.tieriv + data.technical_operation.tieriv  + data.finance_sbd.tieriv  + data.hr_admin.tieriv  + data.ice_cream.tieriv  + data.audit.tieriv  + data.general_management.tieriv  + data.legal.tieriv + data.marketing.tieriii + data.dairy_sales.tieriii + data.technical_operation.tieriii  + data.finance_sbd.tieriii  + data.hr_admin.tieriii  + data.ice_cream.tieriii  + data.audit.tieriii  + data.general_management.tieriii  + data.legal.tieriii + data.marketing.tierii + data.dairy_sales.tierii + data.technical_operation.tierii  + data.finance_sbd.tierii  + data.hr_admin.tierii  + data.ice_cream.tierii  + data.audit.tierii  + data.general_management.tierii  + data.legal.tierii + data.marketing.tieri + data.dairy_sales.tieri + data.technical_operation.tieri  + data.finance_sbd.tieri  + data.hr_admin.tieri  + data.ice_cream.tieri  + data.audit.tieri  + data.general_management.tieri  + data.legal.tieri) + "</b></td>" +
+                    "</tr>";
+        return temp;
+    }
+
+    var setTableData = function(url, tableClass) {
+        $.get(url, function (data) {
+            // console.log(data.marketing);
+            var atable = [];
+
+            if (data.marketing) {
+                var div = "Marketing";
+                var temp = setData(data.marketing, div);
+                atable.push(temp);
+            }
+            if (data.dairy_sales) {
+                var div = "Dairy Sales";
+                var temp = setData(data.dairy_sales, div);
+                atable.push(temp);
+            }
+            if (data.technical_operation) {
+                var div = "Technical Operation";
+                var temp = setData(data.technical_operation, div);
+                atable.push(temp);
+            }
+            if (data.finance_sbd) {
+                var div = "Finance & SBD";
+                var temp = setData(data.finance_sbd, div);
+                atable.push(temp);
+            }
+            if (data.hr_admin) {
+                var div = "HR & admin";
+                var temp = setData(data.hr_admin, div);
+                atable.push(temp);
+            }
+            if (data.ice_cream) {
+                var div = "Ice Cream";
+                var temp = setData(data.ice_cream, div);
+                atable.push(temp);
+            }
+            if (data.legal) {
+                var div = "Legal";
+                var temp = setData(data.legal, div);
+                atable.push(temp);
+            }
+            if (data.audit) {
+                var div = "Audit";
+                var temp = setData(data.audit, div);
+                atable.push(temp);
+            }
+            if (data.general_management) {
+                var div = "General Management";
+                var temp = setData(data.general_management, div);
+                atable.push(temp);
+            }
+
+            atable.push(calculateTotal(data));
+            $(tableClass).html(atable.join(""));
+            // return atable.join("");
+        }
+    )};
+
+    $('#year_select').on('change', function () {
+        var year_select = $(this).val();
+        var url = "/approved_actual/api/index/" + year_select + "/0";
+        console.log(url);
+        setTableData(url, ".approved_table");
+
+        var pivotdata = <%- JSON.stringify(attritionMaster) %>
+        
+        for(var k in pivotdata) {
+            console.log(pivotdata[k])
+            delete pivotdata[k]._id
+        }
+
+        console.log(pivotdata)
+        $("#pivotOutput").pivotUI(pivotdata, {
+            // exclusions: ["_id"]
+        })
+    });
+
+    
+
+    $('#month_select').on('change', function () {
+        var month_select = $(this).val();
+        
+        var year_select = $('#year_select').val();
+
+        if (year_select != '') {
+            // get data from api
+            console.log(year_select + " " + month_select);
+            var aurl = "/approved_actual/api/index/" + year_select + "/" + month_select;
+            console.log(aurl);
+            // setTableData(aurl, ".actual_table");
+            // $(".actual_table").html(temp);
+            $.get(aurl, function (data) {
+                $("#pivotOutput").pivotUI(data, {
+                    exclusions: ["_id"]
+                })
+            })
+
+        }
+    });
+</script>

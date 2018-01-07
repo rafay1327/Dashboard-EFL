@@ -1,0 +1,83 @@
+<% include ../../../partials/header %>
+<section class="content-header">
+ <h1> Gender Wise Attrition (CL 20 to 29)
+
+  <a href="/attrition" class="pull-right   btn btn-primary">attrition</a>
+</h1>
+</section>
+
+<!-- Main content -->
+<section class="content container-fluid">
+  <div style ="width: 900px; height: 500px;">
+
+    <canvas id ="barChart" height="500" width="900"></canvas>
+  </div> 
+
+</section>
+
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.js"></script>
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.min.js"></script>
+
+
+<%
+var male=0,female=0,count=0;
+
+attritionMaster.forEach(function(obj){
+  rank = obj.PSGroup;
+  var toInt = rank.replace( /^\D+/g, ''); //CL 20 becomes 20 (int)
+  if(toInt >=20 && toInt <=29){
+    if(obj.GenderKey==="Male"){
+      male++;
+    }
+    else{
+      female++;
+    }
+  }
+  count++;
+});
+console.log(count);
+%>
+
+<script type="text/javascript">
+
+
+  const CHART = document.getElementById("barChart");
+  let barChart = new Chart(CHART, {
+    type : 'bar',
+    data: {
+      labels: ["Male %", "Female %"],
+
+      datasets: [{
+        label: 'Comparison between resigned Males and Females (CL 20-29) ',
+        data: [<%= male*100/count %> , <%= female*100/count %> ],
+        backgroundColor: [
+        'rgba(255, 159, 64, 1)',
+        'rgba(244, 69, 66 ,1 )'
+        
+
+        ],
+        borderColor: [
+        'rgba(255,99,132,1)',
+        'rgba(54, 162, 235, 1)'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options : {
+      scales: {
+        yAxes:  [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  });
+  console.log(CHART);
+
+</script>
+
+
+<% include ../../../partials/footer %>

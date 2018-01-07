@@ -1,0 +1,94 @@
+<% include ../../partials/header %>
+
+    <section class="content-header">
+        <h1> PLI
+            <a class="btn btn-primary btn-large" href="pli/new">Add</a>
+            <a class="btn btn-primary btn-large" href="pli/stats">Statistics</a>
+        </h1>
+    </section>
+
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <div class="row">
+                            <div class=" col-md-3">
+                                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Query" class="form-control">
+                            </div>
+                            <div class="col-md-9">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <table id="myTable" class="table table-bordered table-striped">
+                                <tr class="header">
+
+                                    <th>#</th>
+                                    <th>Employee Name</th>
+                                    <th>CNIC</th>
+                                    <th>Date</th>
+                                    <th>Position</th>
+                                    <th>Status</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                <% pli.forEach(function(obj){%>
+
+                                    <tr>
+                                        <td>
+                                            <%=obj.s_no %>
+                                        </td>
+                                        <td>
+                                            <%= obj.name %>
+                                        </td>
+                                        <td>
+                                            <%= obj.cnic %>
+                                        </td>
+                                        <td>
+                                            <%= obj.date %>
+                                        </td>
+                                        <td>
+                                            <%= obj.position %>
+                                        </td>
+                                        <td>
+                                            <%= obj.status %>
+                                        </td>
+
+                                        <td><a class="btn btn-primary" href="pli/<%=obj._id%>">Edit</a></td>
+                                        <td><a class="btn btn-danger" href="/pli/delete/<%=obj._id%>">Delete</a></td>
+                                    </tr>
+                                    <% }); %>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function myFunction() {
+            // Declare variables 
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+    <% include ../../partials/footer %>

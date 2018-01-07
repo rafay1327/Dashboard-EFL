@@ -1,0 +1,84 @@
+<% include ../../partials/header %>
+    <section class="content-header">
+        <h1>Attrition</h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Create new entry</h3>
+                    </div>
+                    <form role="form" method="POST" action="<%= object._id%>">
+                        <input type="hidden" name="_method" value="patch">
+                        <input type="hidden" name="_id" value="<%= object._id %>">
+                        <div class="box-body">
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Employee Categories</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" name="ecategories" class="form-control" for="pno" placeholder="" value="<%= object.ecategories%>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Month</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <select name="month">
+                                        <option selected="<%= object.month %>" value="<%= object.month %>">
+                                            <%= object.month %>
+                                        </option>
+                                        <option value="">January</option>
+                                        <option value="">February</option>
+                                        <option value="">March</option>
+                                        <option value="">April</option>
+                                        <option value="">May</option>
+                                        <option value="">June</option>
+                                        <option value="">July</option>
+                                        <option value="">August</option>
+                                        <option value="">September</option>
+                                        <option value="">October</option>
+                                        <option value="">Novemeber</option>
+                                        <option value="">December</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Average</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="average" type="text" class="form-control" for="" placeholder="" value="<%= object.average%>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Left</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="left" type="text" class="form-control" for="" placeholder="" value="<%= object.left%>">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-md-3 text-right">
+                                    <label for="">Percentage</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <input name="percentage" type="text" class="form-control" for="" placeholder="" value="<%= object.percentage%>">
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <button class="btn btn-success pull-right" type="submit">Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+<% include ../../partials/footer %>
